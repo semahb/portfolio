@@ -1,0 +1,26 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ProcessComponent } from './process.component';
+
+describe('ProcessComponent', () => {
+  let component: ProcessComponent;
+  let fixture: ComponentFixture<ProcessComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [ProcessComponent]
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(ProcessComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should display all process steps', () => {
+    const steps = fixture.nativeElement.querySelectorAll('.pstep');
+    expect(steps.length).toBe(4);
+  });
+});
