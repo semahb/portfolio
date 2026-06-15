@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavComponent } from '../features/nav/nav.component';
 import { HeroComponent } from '../features/hero/hero.component';
@@ -44,8 +44,8 @@ import { CursorComponent } from '../shared/cursor/cursor.component';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent implements OnInit {
-  ngOnInit(): void {
+export class HomeComponent implements AfterViewInit {
+  ngAfterViewInit(): void {
     this.initializeRevealObserver();
     this.initializeNavActiveLink();
   }
