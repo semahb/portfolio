@@ -1,0 +1,38 @@
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="hero-in">
+    <div class="avail-badge" data-testid="hero-badge">
+      <span class="avail-dot"></span>Available for freelance missions
+    </div>
+    <p class="eyebrow">Full-Stack Software Engineer</p>
+    <h1 class="h1" data-testid="hero-title">
+      I turn your idea into<br /><span class="acc">a production app.</span>
+    </h1>
+    <p class="hero-p">
+      From <strong>backend architecture</strong> to
+      <strong>polished Angular frontend</strong> — I design, build, and ship
+      complete web products. Fast, clean, and ready for real users from day
+      one.
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-p" data-testid="hero-cta-work">See My Work →</a>
+      <a href="#contact" class="btn-o" data-testid="hero-cta-talk">Let's Talk</a>
+    </div>
+    <div class="kpis">
+      @for (kpi of kpiItems; track kpi.value) {
+        <div class="kpi" [attr.data-testid]="'hero-kpi-' + kpi.value">
+          <div class="kn">
+            @if (kpi.value === '3+') {
+              <span>3<em>+</em></span>
+            } @else {
+              <span>{{ kpi.value }}</span>
+            }
+          </div>
+          <div class="kl">{{ kpi.label }}</div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
