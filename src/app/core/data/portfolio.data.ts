@@ -399,3 +399,21 @@ export const CONTACT_LINKS: ContactLink[] = [
     href: 'tel:+21694344306'
   }
 ];
+
+export interface FooterData {
+  logoText: string;
+  name: string;
+  email: string;
+  emailHref: string;
+  tagline: string;
+  year: string;
+}
+
+export const FOOTER_DATA: FooterData = {
+  logoText: 'Bader',
+  name: 'Bader Semah',
+  email: 'bader.semah1@gmail.com',
+  emailHref: 'mailto:bader.semah1@gmail.com',
+  tagline: 'Available for freelance worldwide',
+  year: '2025'
+};

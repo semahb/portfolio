@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FOOTER_DATA, FooterData } from '../../core/data/portfolio.data';
 
 @Component({
   selector: 'app-footer',
@@ -7,14 +8,16 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     <footer>
-      <div class="ftl" data-testid="footer-logo">Bader<span>.</span></div>
+      <div class="ftl" data-testid="footer-logo">{{ footer.logoText }}<span>.</span></div>
       <div class="ftr">
-        © 2025 Bader Semah ·
-        <a href="mailto:bader.semah1@gmail.com" data-testid="footer-email">bader.semah1&#64;gmail.com</a> ·
-        Available for freelance worldwide
+        © {{ footer.year }} {{ footer.name }} ·
+        <a [href]="footer.emailHref" data-testid="footer-email">{{ footer.email }}</a> ·
+        {{ footer.tagline }}
       </div>
     </footer>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FooterComponent {}
+export class FooterComponent {
+  footer: FooterData = FOOTER_DATA;
+}

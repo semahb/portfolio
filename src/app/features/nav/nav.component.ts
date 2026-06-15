@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NAV_LINKS } from '../../core/data/portfolio.data';
+import { NAV_LINKS, FOOTER_DATA } from '../../core/data/portfolio.data';
 
 @Component({
   selector: 'app-nav',
@@ -12,6 +12,7 @@ import { NAV_LINKS } from '../../core/data/portfolio.data';
 })
 export class NavComponent {
   navLinks = NAV_LINKS;
+  hireEmailHref = FOOTER_DATA.emailHref;
   isMobileMenuOpen = false;
 
   toggleTheme(): void {

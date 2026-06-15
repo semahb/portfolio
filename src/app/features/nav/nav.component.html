@@ -7,7 +7,7 @@
   </ul>
   <div class="nav-r">
     <button class="tbtn" (click)="toggleTheme()" title="Toggle theme" data-testid="nav-theme-toggle"></button>
-    <a href="mailto:bader.semah1@gmail.com" class="hire-btn" data-testid="nav-hire-btn">Hire Me</a>
+    <a [href]="hireEmailHref" class="hire-btn" data-testid="nav-hire-btn">Hire Me</a>
     <div class="mob-tog" (click)="toggleMobileMenu()" data-testid="nav-mobile-toggle">
       <span></span><span></span><span></span>
     </div>
