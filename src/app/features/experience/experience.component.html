@@ -1,0 +1,30 @@
+<section id="experience">
+  <div class="slabel">Timeline</div>
+  <h2 class="stitle">Real experience, <em>real systems</em></h2>
+  <div class="tl">
+    @for (item of experienceItems; track item.role) {
+      <div class="tli r" [attr.data-testid]="'experience-' + item.role">
+        <div class="tdot" [class.live]="item.isLive"></div>
+        <div class="tperiod">
+          {{ item.period }}
+          @if (item.badge) {
+            <span class="tbadge">{{ item.badge }}</span>
+          }
+        </div>
+        <div class="trole">{{ item.role }}</div>
+        <div class="tco">{{ item.company }}</div>
+        <p class="tdesc">{{ item.description }}</p>
+        <ul class="tbuls">
+          @for (bullet of item.bullets; track bullet.text) {
+            <li>{{ bullet.text }}</li>
+          }
+        </ul>
+        <div class="ttechs">
+          @for (tech of item.techs; track tech) {
+            <span class="ttag">{{ tech }}</span>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</section>

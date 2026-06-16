@@ -1,0 +1,78 @@
+<section id="contact">
+  <div class="slabel">Get In Touch</div>
+  <h2 class="stitle">Have a project <em>in mind?</em></h2>
+  <div class="cwrap">
+    <div class="r">
+      <p class="clede">
+        Whether you need a full product built, a senior dev to join your team, or a complex system problem solved, let's talk about it.
+      </p>
+      <div class="cms">
+        @for (link of contactLinks; track link.main) {
+          <a [href]="link.href" class="cm" [attr.data-testid]="'contact-link-' + link.main">
+            <div class="cicon">{{ link.icon }}</div>
+            <div>
+              <div class="cmain">{{ link.main }}</div>
+              <div class="csub">{{ link.sub }}</div>
+            </div>
+          </a>
+        }
+      </div>
+      <div class="rpromise">
+        <span class="rdot"></span>I usually respond within 24 hours
+      </div>
+    </div>
+    <div class="r d2">
+      <form class="cform" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="frow">
+          <div class="fg">
+            <label class="flbl">Name</label
+            ><input
+              class="fi"
+              type="text"
+              placeholder="Your name"
+              formControlName="name"
+              data-testid="contact-name-input"
+            />
+          </div>
+          <div class="fg">
+            <label class="flbl">Email</label
+            ><input
+              class="fi"
+              type="email"
+              placeholder="your@email.com"
+              formControlName="email"
+              data-testid="contact-email-input"
+            />
+          </div>
+        </div>
+        <div class="fg">
+          <label class="flbl">What are you building?</label
+          ><input
+            class="fi"
+            type="text"
+            placeholder="SaaS platform, MVP, team augmentation…"
+            formControlName="project"
+            data-testid="contact-project-input"
+          />
+        </div>
+        <div class="fg">
+          <label class="flbl">Tell me more</label
+          ><textarea
+            class="fta"
+            placeholder="Describe your project in 2–3 sentences…"
+            formControlName="message"
+            data-testid="contact-message-textarea"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="fsub"
+          [style.background]="isSubmitted ? '#10b981' : ''"
+          data-testid="contact-submit-btn"
+        >
+          {{ submitButtonText }}
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
