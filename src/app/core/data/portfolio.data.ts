@@ -92,8 +92,8 @@ export interface ContactLink {
 
 export const NAV_LINKS: NavLink[] = [
   { label: 'Services', href: '#what' },
-  { label: 'Projects', href: '#projects' },
   { label: 'Process', href: '#process' },
+  { label: 'Projects', href: '#projects' },
   { label: 'Skills', href: '#skills' },
   { label: 'Experience', href: '#experience' },
   { label: 'Contact', href: '#contact' }
