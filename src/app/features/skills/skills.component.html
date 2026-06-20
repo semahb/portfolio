@@ -27,8 +27,8 @@
           </div>
         }
       </div>
-      <div class="lcards">
-        <div style="margin-bottom: 1rem; font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-tertiary);">{{ 'SKILLS.LANGUAGES_TITLE' | translate }}</div>
+      <div class="skg-name" style="margin-top: 2.4rem; margin-bottom: 1.2rem">{{ 'SKILLS.LANGUAGES_TITLE' | translate }}</div>
+      <div class="lcards" style="margin-top: 0">
         @for (lang of languages; track lang.name) {
           <div class="lcard" [attr.data-testid]="'language-' + lang.name">
             <div class="ln">{{ lang.name }}</div>
