@@ -1,0 +1,6 @@
+services:
+  portfolio:
+    image: ghcr.io/semahb/portfolio:latest
+    restart: unless-stopped
+    ports:
+      - "2000:2000"
