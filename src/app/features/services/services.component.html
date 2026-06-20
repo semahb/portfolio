@@ -1,18 +1,18 @@
 <section id="what">
-  <div class="slabel">Services</div>
-  <h2 class="stitle">What I can do <em>for you</em></h2>
+  <div class="slabel">{{ 'SERVICES.LABEL' | translate }}</div>
+  <h2 class="stitle">{{ 'SERVICES.TITLE' | translate }}</h2>
   <p class="ssub">
-    Three ways to work together — pick what fits your situation.
+    {{ 'SERVICES.TITLE' | translate }}
   </p>
   <div class="what-grid">
-    @for (card of serviceCards; let i = $index; track card.name) {
-      <div class="wcard r" [ngClass]="'d' + (i + 1)" [attr.data-testid]="'service-card-' + card.name">
+    @for (card of serviceCards; let i = $index; track card.id) {
+      <div class="wcard r" [ngClass]="'d' + (i + 1)" [attr.data-testid]="'service-card-' + card.id">
         <div class="wicon">{{ card.icon }}</div>
-        <div class="wname">{{ card.name }}</div>
-        <p class="wdesc">{{ card.description }}</p>
+        <div class="wname">{{ ('SERVICES.SERVICE' + (i + 1) + '_NAME') | translate }}</div>
+        <p class="wdesc">{{ ('SERVICES.SERVICE' + (i + 1) + '_DESC') | translate }}</p>
         <div class="wtags">
-          @for (tag of card.tags; track tag) {
-            <span class="wtag">{{ tag }}</span>
+          @for (tag of getServiceTags(i + 1); track tag) {
+            <span class="wtag">{{ ('SERVICES.SERVICE' + (i + 1) + '_TAG' + tag) | translate }}</span>
           }
         </div>
       </div>

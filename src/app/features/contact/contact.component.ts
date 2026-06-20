@@ -1,12 +1,13 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { CONTACT_LINKS } from '../../core/data/portfolio.data';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, TranslatePipe],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -14,10 +15,10 @@ import { CONTACT_LINKS } from '../../core/data/portfolio.data';
 export class ContactComponent {
   contactLinks = CONTACT_LINKS;
   contactForm: FormGroup;
-  submitButtonText = 'Send Message →';
-  isSubmitted = false;
+  submitButtonText = signal('Send Message →');
+  isSubmitted = signal(false);
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private translate: TranslateService) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -28,14 +29,19 @@ export class ContactComponent {
 
   onSubmit(): void {
     if (this.contactForm.valid) {
-      this.submitButtonText = '✓ Sent! I\'ll reply within 24h';
-      this.isSubmitted = true;
+      this.submitButtonText.set('✓ Sent! I\'ll reply within 24h');
+      this.isSubmitted.set(true);
 
       setTimeout(() => {
-        this.submitButtonText = 'Send Message →';
-        this.isSubmitted = false;
+        this.submitButtonText.set('Send Message →');
+        this.isSubmitted.set(false);
         this.contactForm.reset();
       }, 4000);
     }
+  }
+
+  getContactLinkKey(index: number): string {
+    const keys = ['EMAIL', 'LINKEDIN', 'PHONE'];
+    return `CONTACT.${keys[index]}_`;
   }
 }

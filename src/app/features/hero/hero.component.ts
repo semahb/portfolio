@@ -1,15 +1,24 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { KPI_ITEMS } from '../../core/data/portfolio.data';
+import { TranslatePipe } from '@ngx-translate/core';
+
+interface KPIItem {
+  id: string;
+}
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeroComponent {
-  kpiItems = KPI_ITEMS;
+  kpiItems: KPIItem[] = [
+    { id: 'YEARS' },
+    { id: 'INDUSTRIES' },
+    { id: 'LANGUAGES' },
+    { id: 'SCALABILITY' }
+  ];
 }

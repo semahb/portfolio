@@ -1,11 +1,11 @@
 <section id="skills">
-  <div class="slabel">Technical Stack</div>
+  <div class="slabel">{{ 'SKILLS.TITLE' | translate }}</div>
   <h2 class="stitle">Full-stack depth, <em>not just breadth</em></h2>
   <div class="skl">
     <div>
       @for (group of skillGroups; track group.name) {
         <div class="skg r" [attr.data-testid]="'skill-group-' + group.name">
-          <div class="skg-name">{{ group.name }}</div>
+          <div class="skg-name">{{ (getSkillGroupKey(group.name)) | translate }}</div>
           <div class="pills">
             @for (pill of group.pills; track pill.label) {
               <span class="pill" [class.k]="pill.isKey">{{ pill.label }}</span>
@@ -15,19 +15,20 @@
       }
     </div>
     <div class="r">
-      <div class="skg-name" style="margin-bottom: 1.2rem">Proficiency</div>
+      <div class="skg-name" style="margin-bottom: 1.2rem">{{ 'SKILLS.PROFICIENCY' | translate }}</div>
       <div class="prof-list">
         @for (prof of proficiencies; track prof.name) {
           <div [attr.data-testid]="'proficiency-' + prof.name">
             <div class="pm">
-              <span class="pn">{{ prof.name }}</span
+              <span class="pn">{{ (getProficiencyKey(prof.name)) | translate }}</span
               ><span class="pv">{{ prof.level }}</span>
             </div>
             <div class="ptrack"><div class="pbar" [attr.data-w]="prof.width"></div></div>
           </div>
         }
       </div>
-      <div class="lcards">
+      <div class="skg-name" style="margin-top: 2.4rem; margin-bottom: 1.2rem">{{ 'SKILLS.LANGUAGES_TITLE' | translate }}</div>
+      <div class="lcards" style="margin-top: 0">
         @for (lang of languages; track lang.name) {
           <div class="lcard" [attr.data-testid]="'language-' + lang.name">
             <div class="ln">{{ lang.name }}</div>
