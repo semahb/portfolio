@@ -40,4 +40,8 @@ export class ProjectsComponent {
     };
     return filterLabels[filter] || filter;
   }
+
+  getProjectKey(index: number): string {
+    return 'PROJECTS.PROJECT' + (index + 1);
+  }
 }
