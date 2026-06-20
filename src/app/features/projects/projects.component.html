@@ -1,21 +1,21 @@
 <section id="projects">
   <div class="proj-header">
     <div>
-      <div class="slabel">Selected Work</div>
+      <div class="slabel">{{ 'PROJECTS.TITLE' | translate }}</div>
       <h2 class="stitle">Four products. <em>Four different problems solved.</em></h2>
       <p class="ssub" style="margin-bottom: 0">
         Click any project to see what was built and why it mattered.
       </p>
     </div>
     <div class="proj-filters">
-      @for (filter of ['all', 'fullstack', 'backend', 'realtime']; track filter) {
+      @for (filter of filters; track filter) {
         <button
           class="pf"
           [class.active]="activeFilter === filter"
           (click)="filterProjects(filter)"
           [attr.data-testid]="'project-filter-' + filter"
         >
-          {{ filter === 'all' ? 'All' : filter === 'fullstack' ? 'Full-Stack' : filter === 'backend' ? 'Backend' : 'Real-time' }}
+          {{ (getFilterLabel(filter)) | translate }}
         </button>
       }
     </div>

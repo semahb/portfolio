@@ -1,22 +1,22 @@
 <section id="experience">
-  <div class="slabel">Timeline</div>
+  <div class="slabel">{{ 'EXPERIENCE.TITLE' | translate }}</div>
   <h2 class="stitle">Real experience, <em>real systems</em></h2>
   <div class="tl">
-    @for (item of experienceItems; track item.role) {
+    @for (item of experienceItems; let i = $index; track item.role) {
       <div class="tli r" [attr.data-testid]="'experience-' + item.role">
         <div class="tdot" [class.live]="item.isLive"></div>
         <div class="tperiod">
-          {{ item.period }}
+          {{ (getExperienceKeyPrefix(i) + '_PERIOD') | translate }}
           @if (item.badge) {
-            <span class="tbadge">{{ item.badge }}</span>
+            <span class="tbadge">{{ (getExperienceKeyPrefix(i) + '_BADGE') | translate }}</span>
           }
         </div>
-        <div class="trole">{{ item.role }}</div>
-        <div class="tco">{{ item.company }}</div>
-        <p class="tdesc">{{ item.description }}</p>
+        <div class="trole">{{ (getExperienceKeyPrefix(i) + '_ROLE') | translate }}</div>
+        <div class="tco">{{ (getExperienceKeyPrefix(i) + '_COMPANY') | translate }}</div>
+        <p class="tdesc">{{ (getExperienceKeyPrefix(i) + '_DESC') | translate }}</p>
         <ul class="tbuls">
-          @for (bullet of item.bullets; track bullet.text) {
-            <li>{{ bullet.text }}</li>
+          @for (bullet of [1, 2, 3]; track $index) {
+            <li>{{ (getExperienceKeyPrefix(i) + '_BULLET' + bullet) | translate }}</li>
           }
         </ul>
         <div class="ttechs">
