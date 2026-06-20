@@ -1,6 +1,6 @@
 <section id="experience">
   <div class="slabel">{{ 'EXPERIENCE.TITLE' | translate }}</div>
-  <h2 class="stitle">{{ 'EXPERIENCE.SUBTITLE_PRE' | translate }}<em>{{ 'EXPERIENCE.SUBTITLE_EM' | translate }}</em></h2>
+  <h2 class="stitle">{{ 'EXPERIENCE.SUBTITLE' | translate }}</h2>
   <div class="tl">
     @for (item of experienceItems; let i = $index; track item.role) {
       <div class="tli r" [attr.data-testid]="'experience-' + item.role">

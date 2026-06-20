@@ -1,8 +1,7 @@
-import { Component, ChangeDetectionStrategy, signal, OnInit, OnDestroy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
-import { Subscription } from 'rxjs';
 import { CONTACT_LINKS } from '../../core/data/portfolio.data';
 
 @Component({
@@ -13,12 +12,11 @@ import { CONTACT_LINKS } from '../../core/data/portfolio.data';
   styleUrls: ['./contact.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ContactComponent implements OnInit, OnDestroy {
+export class ContactComponent {
   contactLinks = CONTACT_LINKS;
   contactForm: FormGroup;
-  submitButtonText = signal('');
+  submitButtonKey = signal('CONTACT.BUTTON_SEND');
   isSubmitted = signal(false);
-  private langSubscription: Subscription | null = null;
 
   constructor(private fb: FormBuilder, private translate: TranslateService) {
     this.contactForm = this.fb.group({
@@ -29,30 +27,13 @@ export class ContactComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnInit(): void {
-    this.updateSubmitButtonText();
-    this.langSubscription = this.translate.onLangChange.subscribe(() => {
-      if (!this.isSubmitted()) {
-        this.updateSubmitButtonText();
-      }
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.langSubscription?.unsubscribe();
-  }
-
-  private updateSubmitButtonText(): void {
-    this.submitButtonText.set(this.translate.instant('CONTACT.FORM_SUBMIT'));
-  }
-
   onSubmit(): void {
     if (this.contactForm.valid) {
-      this.submitButtonText.set(this.translate.instant('CONTACT.FORM_SUBMIT_SENT'));
+      this.submitButtonKey.set('CONTACT.BUTTON_SENT');
       this.isSubmitted.set(true);
 
       setTimeout(() => {
-        this.updateSubmitButtonText();
+        this.submitButtonKey.set('CONTACT.BUTTON_SEND');
         this.isSubmitted.set(false);
         this.contactForm.reset();
       }, 4000);

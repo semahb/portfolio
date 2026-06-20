@@ -1,9 +1,7 @@
 <section id="process">
   <div class="slabel">{{ 'PROCESS.LABEL' | translate }}</div>
   <h2 class="stitle">{{ 'PROCESS.TITLE' | translate }}</h2>
-  <p class="ssub">
-    {{ 'PROCESS.SUBTITLE' | translate }}
-  </p>
+  <p class="ssub">{{ 'PROCESS.SUBTITLE' | translate }}</p>
   <div class="pgrid2">
     @for (step of processSteps; let i = $index; track step.id) {
       <div class="pstep r" [ngClass]="'d' + (i + 1)" [attr.data-testid]="'process-step-' + step.id">

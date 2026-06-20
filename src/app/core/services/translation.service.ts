@@ -8,7 +8,7 @@ import { signal } from '@angular/core';
 export class TranslationService {
   private readonly storageKey = 'portfolio-lang';
   private readonly defaultLanguage = 'en';
-  private readonly supportedLanguages = ['en', 'fr'];
+  private readonly supportedLanguages = ['en', 'fr', 'ar'];
 
   currentLanguage = signal<string>(this.defaultLanguage);
 
@@ -37,7 +37,35 @@ export class TranslationService {
     this.currentLanguage.set(language);
     if (typeof window !== 'undefined') {
       localStorage.setItem(this.storageKey, language);
+      this.applyDirectionality(language);
     }
+  }
+
+  private applyDirectionality(language: string): void {
+    const html = document.documentElement;
+    const isRtl = language === 'ar';
+    html.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
+    html.setAttribute('lang', language);
+    html.classList.toggle('lang-ar', isRtl);
+    if (isRtl) {
+      this.loadArabicFont();
+    } else {
+      this.removeArabicFont();
+    }
+  }
+
+  private loadArabicFont(): void {
+    if (!document.getElementById('arabic-font')) {
+      const link = document.createElement('link');
+      link.id = 'arabic-font';
+      link.rel = 'stylesheet';
+      link.href = 'https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap';
+      document.head.appendChild(link);
+    }
+  }
+
+  private removeArabicFont(): void {
+    document.getElementById('arabic-font')?.remove();
   }
 
   getCurrentLanguage(): string {

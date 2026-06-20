@@ -1656,48 +1656,98 @@ html[dir='rtl'] {
   .text-left { text-align: right; }
   .text-right { text-align: left; }
 
-  /* Nav */
-  .nav-links a::after { left: auto; right: 0; }
+  .slabel::before { margin-left: 0; margin-right: 0; }
 
-  /* Theme toggle */
-  .tbtn::after { left: auto; right: 2px; }
-  &[data-theme="light"] .tbtn::after { transform: translateX(-18px); }
-
-  /* Hero */
-  .hero-grid {
-    mask-image: radial-gradient(ellipse 80% 80% at 35% 50%, black, transparent);
+  .kpi {
+    padding-right: 0;
+    margin-right: 0;
+    padding-left: 2.8rem;
+    margin-left: 2.8rem;
+    border-right: none;
+    border-left: 1px solid var(--border);
   }
-  .blob-1 { right: auto; left: 0; }
-  .blob-2 { left: auto; right: 8%; }
+  .kpi:last-child {
+    border-left: none;
+    padding-left: 0;
+    margin-left: 0;
+  }
 
-  /* KPI items */
-  .kpi { padding-right: 0; margin-right: 0; padding-left: 2.8rem; margin-left: 2.8rem; border-right: none; border-left: 1px solid var(--border); }
-  .kpi:last-child { border-left: none; padding-left: 0; margin-left: 0; }
+  .tbtn::after {
+    left: auto;
+    right: 2px;
+  }
+  [data-theme='light'] .tbtn::after {
+    transform: translateX(-18px);
+  }
 
-  /* Services cards */
-  .wcard::before { transform-origin: right; }
+  .tl {
+    padding-left: 0;
+    padding-right: 2rem;
+  }
+  .tl::before {
+    left: auto;
+    right: 0;
+  }
+  .tli {
+    padding: 0 2.8rem 3.5rem 0;
+    transform: translateX(10px);
+  }
+  .tli.on {
+    transform: none;
+  }
+  .tdot {
+    left: auto;
+    right: -2.3rem;
+  }
 
-  /* Process */
-  .pgrid2 { direction: ltr; }
-  .pgrid2::before { background: linear-gradient(270deg, transparent, var(--indigo), var(--indigo), transparent); }
+  .tbuls li {
+    padding-left: 0;
+    padding-right: 1.2rem;
+  }
+  .tbuls li::before {
+    left: auto;
+    right: 0;
+    content: '\2190';
+  }
 
-  /* Projects grid */
-  .prow { grid-template-columns: auto 1fr 3.5rem; }
-  .prow-detail-inner { padding: 1.2rem 5.5rem 1.8rem 0; }
+  .wcard::before {
+    transform-origin: right;
+  }
 
-  /* Experience timeline */
-  .tl { padding-left: 0; padding-right: 2rem; }
-  .tl::before { left: auto; right: 0; }
-  .tli { padding: 0 2.8rem 3.5rem 0; transform: translateX(10px); }
-  .tdot { left: auto; right: -2.3rem; }
-  .tbuls li { padding-left: 0; padding-right: 1.2rem; }
-  .tbuls li::before { left: auto; right: 0; content: "\2190"; }
+  .nav-links a::after {
+    left: auto;
+    right: 0;
+  }
 
-  /* Contact form */
-  .cm:hover { transform: translateX(-4px); }
-}
+  .proj-filters {
+    justify-content: flex-start;
+  }
 
-html.lang-ar .fi,
-html.lang-ar .fta {
-  font-family: 'Cairo', sans-serif;
+  .prow-stack {
+    justify-content: flex-start;
+  }
+
+  .prow-detail-inner {
+    padding: 1.2rem 5.5rem 1.8rem 0;
+  }
+
+  .prow-arrow {
+    transform: scaleX(-1);
+  }
+
+  .prow:hover .prow-arrow {
+    transform: translate(-3px, -3px) scaleX(-1);
+  }
+
+  .cm:hover {
+    transform: translateX(-4px);
+  }
+
+  .hero-grid {
+    mask-image: radial-gradient(
+      ellipse 80% 80% at 35% 50%,
+      black,
+      transparent
+    );
+  }
 }

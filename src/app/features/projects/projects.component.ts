@@ -31,11 +31,6 @@ export class ProjectsComponent {
     return project.filterTags.includes(this.activeFilter);
   }
 
-  getProjectKey(project: any): string {
-    const num = parseInt(project.number, 10);
-    return 'PROJECTS.PROJECT' + num + '_';
-  }
-
   getFilterLabel(filter: string): string {
     const filterLabels: Record<string, string> = {
       all: 'PROJECTS.FILTER_ALL',
@@ -44,5 +39,9 @@ export class ProjectsComponent {
       realtime: 'PROJECTS.FILTER_REALTIME'
     };
     return filterLabels[filter] || filter;
+  }
+
+  getProjectKey(index: number): string {
+    return 'PROJECTS.PROJECT' + (index + 1);
   }
 }

@@ -1,6 +1,6 @@
 <section id="contact">
   <div class="slabel">{{ 'CONTACT.TITLE' | translate }}</div>
-  <h2 class="stitle">{{ 'CONTACT.FORM_HEADING_PRE' | translate }}<em>{{ 'CONTACT.FORM_HEADING_EM' | translate }}</em></h2>
+  <h2 class="stitle">{{ 'CONTACT.SUBTITLE2' | translate }}</h2>
   <div class="cwrap">
     <div class="r">
       <p class="clede">
@@ -18,48 +18,48 @@
         }
       </div>
       <div class="rpromise">
-        <span class="rdot"></span>{{ 'CONTACT.FORM_RESPONSE_TIME' | translate }}
+        <span class="rdot"></span>{{ 'CONTACT.RESPONSE_24H' | translate }}
       </div>
     </div>
     <div class="r d2">
       <form class="cform" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <div class="frow">
           <div class="fg">
-            <label class="flbl">{{ 'CONTACT.FORM_NAME_LABEL' | translate }}</label
+            <label class="flbl">{{ 'CONTACT.FORM_NAME_LBL' | translate }}</label
             ><input
               class="fi"
               type="text"
-              [placeholder]="'CONTACT.FORM_NAME_PLACEHOLDER' | translate"
+              [placeholder]="'CONTACT.FORM_NAME_PL' | translate"
               formControlName="name"
               data-testid="contact-name-input"
             />
           </div>
           <div class="fg">
-            <label class="flbl">{{ 'CONTACT.FORM_EMAIL_LABEL' | translate }}</label
+            <label class="flbl">{{ 'CONTACT.FORM_EMAIL_LBL' | translate }}</label
             ><input
               class="fi"
               type="email"
-              [placeholder]="'CONTACT.FORM_EMAIL_PLACEHOLDER' | translate"
+              [placeholder]="'CONTACT.FORM_EMAIL_PL' | translate"
               formControlName="email"
               data-testid="contact-email-input"
             />
           </div>
         </div>
         <div class="fg">
-          <label class="flbl">{{ 'CONTACT.FORM_PROJECT_LABEL' | translate }}</label
+          <label class="flbl">{{ 'CONTACT.FORM_PROJECT_LBL' | translate }}</label
           ><input
             class="fi"
             type="text"
-            [placeholder]="'CONTACT.FORM_PROJECT_PLACEHOLDER' | translate"
+            [placeholder]="'CONTACT.FORM_PROJECT_PL' | translate"
             formControlName="project"
             data-testid="contact-project-input"
           />
         </div>
         <div class="fg">
-          <label class="flbl">{{ 'CONTACT.FORM_MESSAGE_LABEL' | translate }}</label
+          <label class="flbl">{{ 'CONTACT.FORM_MESSAGE_LBL' | translate }}</label
           ><textarea
             class="fta"
-            [placeholder]="'CONTACT.FORM_MESSAGE_PLACEHOLDER' | translate"
+            [placeholder]="'CONTACT.FORM_MESSAGE_PL' | translate"
             formControlName="message"
             data-testid="contact-message-textarea"
           ></textarea>
@@ -70,7 +70,7 @@
           [style.background]="isSubmitted() ? '#10b981' : ''"
           data-testid="contact-submit-btn"
         >
-          {{ submitButtonText() }}
+          {{ submitButtonKey() | translate }}
         </button>
       </form>
     </div>

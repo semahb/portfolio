@@ -1,6 +1,6 @@
 <section id="skills">
   <div class="slabel">{{ 'SKILLS.TITLE' | translate }}</div>
-  <h2 class="stitle">{{ 'SKILLS.SUBTITLE_PRE' | translate }}<em>{{ 'SKILLS.SUBTITLE_EM' | translate }}</em></h2>
+  <h2 class="stitle">{{ 'SKILLS.SUBTITLE' | translate }}</h2>
   <div class="skl">
     <div>
       @for (group of skillGroups; track group.name) {
@@ -21,14 +21,14 @@
           <div [attr.data-testid]="'proficiency-' + prof.name">
             <div class="pm">
               <span class="pn">{{ (getProficiencyKey(prof.name)) | translate }}</span
-              ><span class="pv">{{ (getLevelKey(prof.level)) | translate }}</span>
+              ><span class="pv">{{ getLevelKey(prof.level) | translate }}</span>
             </div>
             <div class="ptrack"><div class="pbar" [attr.data-w]="prof.width"></div></div>
           </div>
         }
       </div>
-      <div class="lcards">
-        <div style="margin-bottom: 1rem; font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-tertiary);">{{ 'SKILLS.LANGUAGES_TITLE' | translate }}</div>
+      <div class="skg-name" style="margin-top: 2.4rem; margin-bottom: 1.2rem">{{ 'SKILLS.LANGUAGES_TITLE' | translate }}</div>
+      <div class="lcards" style="margin-top: 0">
         @for (lang of languages; track lang.name) {
           <div class="lcard" [attr.data-testid]="'language-' + lang.name">
             <div class="ln">{{ lang.name }}</div>

@@ -44,6 +44,7 @@ jobs:
         with:
           context: .
           push: true
+          platforms: linux/arm64
           tags: |
             ${{ steps.vars.outputs.image_name }}:${{ steps.vars.outputs.image_tag }}
             ${{ steps.vars.outputs.image_name }}:${{ github.sha }}
@@ -54,6 +55,9 @@ jobs:
     needs: build-and-push
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Set deploy target based on branch
         id: target
         run: |
@@ -62,6 +66,16 @@ jobs:
           else
             echo "vps_path=${{ secrets.VPS_PROJECT_PATH_DEV }}" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Copy docker-compose.yml to VPS
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          source: docker-compose.yml
+          target: ${{ steps.target.outputs.vps_path }}
 
       - name: Deploy to VPS over SSH
         uses: appleboy/ssh-action@v1.2.0
