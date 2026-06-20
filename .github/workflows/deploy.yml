@@ -2,7 +2,10 @@ name: Build and Deploy
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+      - dev
+
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -11,13 +14,20 @@ jobs:
       packages: write
     outputs:
       image_name: ${{ steps.vars.outputs.image_name }}
+      image_tag: ${{ steps.vars.outputs.image_tag }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Compute lowercase image name
+      - name: Compute image name and tag
         id: vars
-        run: echo "image_name=$(echo ghcr.io/${{ github.repository }} | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "image_name=$(echo ghcr.io/${{ github.repository }} | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_OUTPUT"
+          if [ "${{ github.ref_name }}" = "main" ]; then
+            echo "image_tag=latest" >> "$GITHUB_OUTPUT"
+          else
+            echo "image_tag=${{ github.ref_name }}" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -35,7 +45,7 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ steps.vars.outputs.image_name }}:latest
+            ${{ steps.vars.outputs.image_name }}:${{ steps.vars.outputs.image_tag }}
             ${{ steps.vars.outputs.image_name }}:${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
@@ -44,6 +54,15 @@ jobs:
     needs: build-and-push
     runs-on: ubuntu-latest
     steps:
+      - name: Set deploy target based on branch
+        id: target
+        run: |
+          if [ "${{ github.ref_name }}" = "main" ]; then
+            echo "vps_path=${{ secrets.VPS_PROJECT_PATH }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "vps_path=${{ secrets.VPS_PROJECT_PATH_DEV }}" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Deploy to VPS over SSH
         uses: appleboy/ssh-action@v1.2.0
         with:
@@ -52,7 +71,7 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           port: ${{ secrets.VPS_PORT }}
           script: |
-            cd ${{ secrets.VPS_PROJECT_PATH }}
+            cd ${{ steps.target.outputs.vps_path }}
             docker compose pull
             docker compose up -d --remove-orphans
             docker image prune -f
