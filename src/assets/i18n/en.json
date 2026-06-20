@@ -28,7 +28,16 @@
     "SCALABILITY": "Scalability ceiling"
   },
   "TRUST": {
-    "TITLE": "Trusted by teams building at scale"
+    "TITLE": "Trusted by teams building at scale",
+    "LABEL": "Shipped for",
+    "CHIP_0": "SaaS Platforms",
+    "CHIP_1": "Gov Clients \ud83c\udde6\ud83c\uddf8",
+    "CHIP_2": "Healthcare",
+    "CHIP_3": "EdTech",
+    "CHIP_4": "IoT Systems",
+    "CHIP_5": "Recruitment Tools",
+    "CHIP_6": "Real-time Apps",
+    "CHIP_7": "Telemedicine"
   },
   "SERVICES": {
     "LABEL": "WHAT I DO",
@@ -58,6 +67,7 @@
   "PROCESS": {
     "LABEL": "HOW I WORK",
     "TITLE": "Proven process for shipping clean code",
+    "SUBTITLE": "A clear, repeatable process that keeps you informed and in control at every stage.",
     "STEP1_NUM": "01",
     "STEP1_TITLE": "Discovery",
     "STEP1_DESC": "We discuss goals, constraints, and users. I ask the hard questions so nothing is assumed before we start.",
@@ -73,6 +83,9 @@
   },
   "PROJECTS": {
     "TITLE": "Featured projects",
+    "SUBTITLE_PRE": "Four products. ",
+    "SUBTITLE_EM": "Four different problems solved.",
+    "SUBTITLE_HINT": "Click any project to see what was built and why it mattered.",
     "FILTER_ALL": "All",
     "FILTER_WEB": "Web",
     "FILTER_FULLSTACK": "Full-Stack",
@@ -105,6 +118,8 @@
   },
   "SKILLS": {
     "TITLE": "What I build with",
+    "SUBTITLE_PRE": "Full-stack depth, ",
+    "SUBTITLE_EM": "not just breadth",
     "PROFICIENCY": "Proficiency",
     "BACKEND": "Backend",
     "MICROSERVICES": "Microservices & Architecture",
@@ -116,10 +131,15 @@
     "SKILL_BACKEND": "Backend",
     "SKILL_FRONTEND": "Frontend",
     "SKILL_DATABASES": "Databases",
-    "SKILL_DEVOPS": "DevOps & Tooling"
+    "SKILL_DEVOPS": "DevOps & Tooling",
+    "LEVEL_EXPERT": "Expert",
+    "LEVEL_ADVANCED": "Advanced",
+    "LEVEL_STRONG": "Strong"
   },
   "EXPERIENCE": {
     "TITLE": "Experience",
+    "SUBTITLE_PRE": "Real experience, ",
+    "SUBTITLE_EM": "real systems",
     "EXP1_PERIOD": "Feb 2025 — Present",
     "EXP1_BADGE": "Current",
     "EXP1_ROLE": "Backend Java Developer",
@@ -158,7 +178,20 @@
     "LINKEDIN_MAIN": "linkedin.com/in/semah-bader",
     "LINKEDIN_SUB": "LinkedIn — view full profile",
     "PHONE_MAIN": "(+216) 94 344 306",
-    "PHONE_SUB": "WhatsApp / Phone — Tunisia"
+    "PHONE_SUB": "WhatsApp / Phone — Tunisia",
+    "FORM_HEADING_PRE": "Have a project ",
+    "FORM_HEADING_EM": "in mind?",
+    "FORM_NAME_LABEL": "Name",
+    "FORM_NAME_PLACEHOLDER": "Your name",
+    "FORM_EMAIL_LABEL": "Email",
+    "FORM_EMAIL_PLACEHOLDER": "your@email.com",
+    "FORM_PROJECT_LABEL": "What are you building?",
+    "FORM_PROJECT_PLACEHOLDER": "SaaS platform, MVP, team augmentation\u2026",
+    "FORM_MESSAGE_LABEL": "Tell me more",
+    "FORM_MESSAGE_PLACEHOLDER": "Describe your project in 2\u20133 sentences\u2026",
+    "FORM_SUBMIT": "Send Message \u2192",
+    "FORM_SUBMIT_SENT": "\u2713 Sent! I'll reply within 24h",
+    "FORM_RESPONSE_TIME": "I usually respond within 24 hours"
   },
   "FOOTER": {
     "NAME": "Bader Semah",

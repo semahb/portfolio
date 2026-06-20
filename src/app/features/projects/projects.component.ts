@@ -31,6 +31,11 @@ export class ProjectsComponent {
     return project.filterTags.includes(this.activeFilter);
   }
 
+  getProjectKey(project: any): string {
+    const num = parseInt(project.number, 10);
+    return 'PROJECTS.PROJECT' + num + '_';
+  }
+
   getFilterLabel(filter: string): string {
     const filterLabels: Record<string, string> = {
       all: 'PROJECTS.FILTER_ALL',

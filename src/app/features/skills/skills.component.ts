@@ -31,4 +31,13 @@ export class SkillsComponent {
   getSkillGroupKey(name: string): string {
     return 'SKILLS.SKILL_' + name.toUpperCase().replace(/\s+/g, '_');
   }
+
+  getLevelKey(level: string): string {
+    const keys: Record<string, string> = {
+      'Expert': 'SKILLS.LEVEL_EXPERT',
+      'Advanced': 'SKILLS.LEVEL_ADVANCED',
+      'Strong': 'SKILLS.LEVEL_STRONG'
+    };
+    return keys[level] || level;
+  }
 }
