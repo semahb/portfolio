@@ -1,15 +1,15 @@
 <section id="process">
-  <div class="slabel">How I Work</div>
-  <h2 class="stitle">From brief to <em>live</em> — 4 steps</h2>
+  <div class="slabel">{{ 'PROCESS.LABEL' | translate }}</div>
+  <h2 class="stitle">{{ 'PROCESS.TITLE' | translate }}</h2>
   <p class="ssub">
     A clear, repeatable process that keeps you informed and in control at every stage.
   </p>
   <div class="pgrid2">
-    @for (step of processSteps; let i = $index; track step.number) {
-      <div class="pstep r" [ngClass]="'d' + (i + 1)" [attr.data-testid]="'process-step-' + step.number">
-        <div class="psnum">{{ step.number }}</div>
-        <div class="pstitle">{{ step.title }}</div>
-        <p class="psdesc">{{ step.description }}</p>
+    @for (step of processSteps; let i = $index; track step.id) {
+      <div class="pstep r" [ngClass]="'d' + (i + 1)" [attr.data-testid]="'process-step-' + step.id">
+        <div class="psnum">{{ ('PROCESS.STEP' + step.id + '_NUM') | translate }}</div>
+        <div class="pstitle">{{ ('PROCESS.STEP' + step.id + '_TITLE') | translate }}</div>
+        <p class="psdesc">{{ ('PROCESS.STEP' + step.id + '_DESC') | translate }}</p>
       </div>
     }
   </div>

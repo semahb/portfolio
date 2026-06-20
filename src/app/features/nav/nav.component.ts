@@ -1,17 +1,32 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NAV_LINKS, FOOTER_DATA } from '../../core/data/portfolio.data';
+import { TranslatePipe } from '@ngx-translate/core';
+import { LangSwitcherComponent } from '../../shared/lang-switcher/lang-switcher.component';
+import { FOOTER_DATA } from '../../core/data/portfolio.data';
+
+interface NavLink {
+  label: string;
+  href: string;
+}
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe, LangSwitcherComponent],
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavComponent {
-  navLinks = NAV_LINKS;
+  navLinks: NavLink[] = [
+    { label: 'NAV.SERVICES', href: '#what' },
+    { label: 'NAV.PROCESS', href: '#process' },
+    { label: 'NAV.PROJECTS', href: '#projects' },
+    { label: 'NAV.SKILLS', href: '#skills' },
+    { label: 'NAV.EXPERIENCE', href: '#experience' },
+    { label: 'NAV.CONTACT', href: '#contact' }
+  ];
+
   hireEmailHref = FOOTER_DATA.emailHref;
   isMobileMenuOpen = false;
 
