@@ -1,18 +1,18 @@
 <section id="contact">
-  <div class="slabel">Get In Touch</div>
+  <div class="slabel">{{ 'CONTACT.TITLE' | translate }}</div>
   <h2 class="stitle">Have a project <em>in mind?</em></h2>
   <div class="cwrap">
     <div class="r">
       <p class="clede">
-        Whether you need a full product built, a senior dev to join your team, or a complex system problem solved, let's talk about it.
+        {{ 'CONTACT.SUBTITLE' | translate }}
       </p>
       <div class="cms">
-        @for (link of contactLinks; track link.main) {
+        @for (link of contactLinks; let i = $index; track link.main) {
           <a [href]="link.href" class="cm" [attr.data-testid]="'contact-link-' + link.main">
             <div class="cicon">{{ link.icon }}</div>
             <div>
-              <div class="cmain">{{ link.main }}</div>
-              <div class="csub">{{ link.sub }}</div>
+              <div class="cmain">{{ (getContactLinkKey(i) + 'MAIN') | translate }}</div>
+              <div class="csub">{{ (getContactLinkKey(i) + 'SUB') | translate }}</div>
             </div>
           </a>
         }
@@ -67,10 +67,10 @@
         <button
           type="submit"
           class="fsub"
-          [style.background]="isSubmitted ? '#10b981' : ''"
+          [style.background]="isSubmitted() ? '#10b981' : ''"
           data-testid="contact-submit-btn"
         >
-          {{ submitButtonText }}
+          {{ submitButtonText() }}
         </button>
       </form>
     </div>
