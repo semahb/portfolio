@@ -2,5 +2,19 @@ services:
   portfolio:
     image: ghcr.io/semahb/portfolio:latest
     restart: unless-stopped
-    ports:
-      - "2000:2000"
+
+    networks:
+      - web-proxy
+
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=web-proxy
+      - traefik.http.routers.portfolio.rule=Host(`semah-bader.com`)
+      - traefik.http.routers.portfolio.entrypoints=websecure
+      - traefik.http.routers.portfolio.tls=true
+      - traefik.http.routers.portfolio.tls.certresolver=le
+      - traefik.http.services.portfolio.loadbalancer.server.port=2000
+
+networks:
+  web-proxy:
+    external: true
