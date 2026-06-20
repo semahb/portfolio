@@ -21,6 +21,14 @@ import { TranslationService } from '../../core/services/translation.service';
       >
         FR
       </button>
+      <span>|</span>
+      <button
+        [class.active]="isCurrentLang('ar')"
+        (click)="setLang('ar')"
+        data-testid="navbar-lang-ar"
+      >
+        AR
+      </button>
     </div>
   `,
   styles: `

@@ -42,21 +42,29 @@ describe('LangSwitcherComponent', () => {
     expect(translationService.setLanguage).toHaveBeenCalledWith('fr');
   });
 
-  it('should render EN and FR buttons', () => {
+  it('should render EN, FR, and AR buttons', () => {
     const buttons = fixture.nativeElement.querySelectorAll('button');
-    expect(buttons.length).toBe(2);
+    expect(buttons.length).toBe(3);
     expect(buttons[0].textContent.trim()).toBe('EN');
     expect(buttons[1].textContent.trim()).toBe('FR');
+    expect(buttons[2].textContent.trim()).toBe('AR');
   });
 
-  it('should have data-testid attributes', () => {
+  it('should have data-testid attributes for all three languages', () => {
     const container = fixture.nativeElement.querySelector('[data-testid="navbar-lang-switcher"]');
     const enBtn = fixture.nativeElement.querySelector('[data-testid="navbar-lang-en"]');
     const frBtn = fixture.nativeElement.querySelector('[data-testid="navbar-lang-fr"]');
+    const arBtn = fixture.nativeElement.querySelector('[data-testid="navbar-lang-ar"]');
 
     expect(container).toBeTruthy();
     expect(enBtn).toBeTruthy();
     expect(frBtn).toBeTruthy();
+    expect(arBtn).toBeTruthy();
+  });
+
+  it('should call setLanguage with ar when AR button clicked', () => {
+    component.setLang('ar');
+    expect(translationService.setLanguage).toHaveBeenCalledWith('ar');
   });
 
   it('should apply active class to current language', () => {

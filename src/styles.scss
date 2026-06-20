@@ -1633,3 +1633,26 @@ footer {
     cursor: auto;
   }
 }
+
+/* Arabic font */
+html.lang-ar {
+  font-family: 'Cairo', sans-serif;
+}
+
+html.lang-ar body {
+  font-family: 'Cairo', sans-serif;
+}
+
+/* RTL layout corrections */
+html[dir='rtl'] {
+  .pi-arrow-right,
+  .pi-chevron-right,
+  .pi-arrow-left,
+  .pi-chevron-left {
+    display: inline-block;
+    transform: scaleX(-1);
+  }
+
+  .text-left { text-align: right; }
+  .text-right { text-align: left; }
+}
