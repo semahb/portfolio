@@ -74,7 +74,7 @@ export class HomeComponent implements AfterViewInit {
     window.addEventListener('scroll', () => {
       let cur = '';
       secs.forEach((s: any) => {
-        if (window.scrollY >= s.offsetTop - 130) cur = s.id;
+        if (s.getBoundingClientRect().top <= 130) cur = s.id;
       });
       nas.forEach((a: any) => {
         a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
