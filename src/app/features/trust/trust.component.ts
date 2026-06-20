@@ -12,4 +12,8 @@ import { TRUST_CHIPS } from '../../core/data/portfolio.data';
 })
 export class TrustComponent {
   trustChips = TRUST_CHIPS;
+
+  getChipKey(index: number): string {
+    return 'TRUST.CHIP_' + index;
+  }
 }

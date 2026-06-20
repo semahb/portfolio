@@ -1750,4 +1750,18 @@ html[dir='rtl'] {
       transparent
     );
   }
+  .blob-1 { right: auto; left: 0; }
+  .blob-2 { left: auto; right: 8%; }
+
+  .pgrid2 { direction: ltr; }
+  .pgrid2::before {
+    background: linear-gradient(270deg, transparent, var(--indigo), var(--indigo), transparent);
+  }
+
+  .prow { grid-template-columns: auto 1fr 3.5rem; }
+}
+
+html.lang-ar .fi,
+html.lang-ar .fta {
+  font-family: 'Cairo', sans-serif;
 }

@@ -29,7 +29,15 @@
   },
   "TRUST": {
     "TITLE": "Approuvé par les équipes qui construisent à grande échelle",
-    "LABEL": "Réalisations"
+    "LABEL": "Réalisations",
+    "CHIP_0": "Plateformes SaaS",
+    "CHIP_1": "Clients gouvernementaux 🇹🇳",
+    "CHIP_2": "Santé",
+    "CHIP_3": "EdTech",
+    "CHIP_4": "Systèmes IoT",
+    "CHIP_5": "Outils de recrutement",
+    "CHIP_6": "Apps temps réel",
+    "CHIP_7": "Télémédecine"
   },
   "SERVICES": {
     "LABEL": "CE QUE JE FAIS",
