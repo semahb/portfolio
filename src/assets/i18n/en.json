@@ -28,7 +28,8 @@
     "SCALABILITY": "Scalability ceiling"
   },
   "TRUST": {
-    "TITLE": "Trusted by teams building at scale"
+    "TITLE": "Trusted by teams building at scale",
+    "LABEL": "Shipped for"
   },
   "SERVICES": {
     "LABEL": "WHAT I DO",
@@ -58,6 +59,7 @@
   "PROCESS": {
     "LABEL": "HOW I WORK",
     "TITLE": "Proven process for shipping clean code",
+    "SUBTITLE": "A clear, repeatable process that keeps you informed and in control at every stage.",
     "STEP1_NUM": "01",
     "STEP1_TITLE": "Discovery",
     "STEP1_DESC": "We discuss goals, constraints, and users. I ask the hard questions so nothing is assumed before we start.",
@@ -73,6 +75,8 @@
   },
   "PROJECTS": {
     "TITLE": "Featured projects",
+    "SUBTITLE": "Four products. Four different problems solved.",
+    "SUBTITLE2": "Click any project to see what was built and why it mattered.",
     "FILTER_ALL": "All",
     "FILTER_WEB": "Web",
     "FILTER_FULLSTACK": "Full-Stack",
@@ -105,6 +109,7 @@
   },
   "SKILLS": {
     "TITLE": "What I build with",
+    "SUBTITLE": "Full-stack depth, not just breadth",
     "PROFICIENCY": "Proficiency",
     "BACKEND": "Backend",
     "MICROSERVICES": "Microservices & Architecture",
@@ -116,10 +121,14 @@
     "SKILL_BACKEND": "Backend",
     "SKILL_FRONTEND": "Frontend",
     "SKILL_DATABASES": "Databases",
-    "SKILL_DEVOPS": "DevOps & Tooling"
+    "SKILL_DEVOPS": "DevOps & Tooling",
+    "LEVEL_EXPERT": "Expert",
+    "LEVEL_ADVANCED": "Advanced",
+    "LEVEL_STRONG": "Strong"
   },
   "EXPERIENCE": {
     "TITLE": "Experience",
+    "SUBTITLE": "Real experience, real systems",
     "EXP1_PERIOD": "Feb 2025 — Present",
     "EXP1_BADGE": "Current",
     "EXP1_ROLE": "Backend Java Developer",
@@ -153,6 +162,18 @@
   "CONTACT": {
     "TITLE": "Let's create something great together",
     "SUBTITLE": "Choose what works for you",
+    "SUBTITLE2": "Have a project in mind?",
+    "FORM_NAME_LBL": "Name",
+    "FORM_NAME_PL": "Your name",
+    "FORM_EMAIL_LBL": "Email",
+    "FORM_EMAIL_PL": "your@email.com",
+    "FORM_PROJECT_LBL": "What are you building?",
+    "FORM_PROJECT_PL": "SaaS platform, MVP, team augmentation\u2026",
+    "FORM_MESSAGE_LBL": "Tell me more",
+    "FORM_MESSAGE_PL": "Describe your project in 2\u20133 sentences\u2026",
+    "RESPONSE_24H": "I usually respond within 24 hours",
+    "BUTTON_SEND": "Send Message \u2192",
+    "BUTTON_SENT": "\u2713 Sent! I'll reply within 24h",
     "EMAIL_MAIN": "bader.semah1@gmail.com",
     "EMAIL_SUB": "Email — preferred for project discussions",
     "LINKEDIN_MAIN": "linkedin.com/in/semah-bader",

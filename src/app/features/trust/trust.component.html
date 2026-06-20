@@ -1,5 +1,5 @@
 <div id="trust">
-  <span class="tlabel">Shipped for</span>
+  <span class="tlabel">{{ 'TRUST.LABEL' | translate }}</span>
   <div class="tchips">
     @for (chip of trustChips; track chip.label) {
       <span class="tc" [attr.data-testid]="'trust-chip-' + chip.label">{{ chip.label }}</span>

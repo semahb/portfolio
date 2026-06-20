@@ -28,7 +28,8 @@
     "SCALABILITY": "حد القابلية للتوسع"
   },
   "TRUST": {
-    "TITLE": "موثوق من فرق تبني على نطاق واسع"
+    "TITLE": "موثوق من فرق تبني على نطاق واسع",
+    "LABEL": "أعمال سابقة"
   },
   "SERVICES": {
     "LABEL": "ماذا أفعل",
@@ -58,6 +59,7 @@
   "PROCESS": {
     "LABEL": "كيف أعمل",
     "TITLE": "عملية مجربة لشحن كود نظيف",
+    "SUBTITLE": "عملية واضحة وقابلة للتكرار تبقيك على اطلاع وتحكم في كل مرحلة.",
     "STEP1_NUM": "01",
     "STEP1_TITLE": "الاكتشاف",
     "STEP1_DESC": "نناقش الأهداف والقيود والمستخدمين. أطرح الأسئلة الصعبة حتى لا يتم افتراض أي شيء قبل أن نبدأ.",
@@ -73,6 +75,8 @@
   },
   "PROJECTS": {
     "TITLE": "مشاريع مختارة",
+    "SUBTITLE": "أربعة منتجات. أربع مشاكل مختلفة تم حلها.",
+    "SUBTITLE2": "اضغط على أي مشروع لترى ما تم بناؤه ولماذا كان مهماً.",
     "FILTER_ALL": "الكل",
     "FILTER_WEB": "ويب",
     "FILTER_FULLSTACK": "Full-Stack",
@@ -105,6 +109,7 @@
   },
   "SKILLS": {
     "TITLE": "ما أبني به",
+    "SUBTITLE": "عمق في Full-Stack، وليس مجرد نطاق عريض",
     "PROFICIENCY": "مستوى الكفاءة",
     "BACKEND": "الخلفية",
     "MICROSERVICES": "الخدمات المصغرة والعمارة",
@@ -116,10 +121,14 @@
     "SKILL_BACKEND": "الخلفية",
     "SKILL_FRONTEND": "الواجهة",
     "SKILL_DATABASES": "قواعد البيانات",
-    "SKILL_DEVOPS": "DevOps والأدوات"
+    "SKILL_DEVOPS": "DevOps والأدوات",
+    "LEVEL_EXPERT": "خبير",
+    "LEVEL_ADVANCED": "متقدم",
+    "LEVEL_STRONG": "قوي"
   },
   "EXPERIENCE": {
     "TITLE": "الخبرة",
+    "SUBTITLE": "خبرة حقيقية، أنظمة حقيقية",
     "EXP1_PERIOD": "فبراير 2025 — حتى الآن",
     "EXP1_BADGE": "حالي",
     "EXP1_ROLE": "مطور Backend Java",
@@ -153,6 +162,18 @@
   "CONTACT": {
     "TITLE": "لنبني شيئًا رائعًا معًا",
     "SUBTITLE": "اختر ما يناسبك",
+    "SUBTITLE2": "هل لديك مشروع في ذهنك؟",
+    "FORM_NAME_LBL": "الاسم",
+    "FORM_NAME_PL": "اسمك",
+    "FORM_EMAIL_LBL": "البريد الإلكتروني",
+    "FORM_EMAIL_PL": "your@email.com",
+    "FORM_PROJECT_LBL": "ماذا تبني؟",
+    "FORM_PROJECT_PL": "منصة SaaS، MVP، تعزيز فريق\u2026",
+    "FORM_MESSAGE_LBL": "أخبرني المزيد",
+    "FORM_MESSAGE_PL": "صف مشروعك في 2\u20133 جمل\u2026",
+    "RESPONSE_24H": "عادة ما أرد خلال 24 ساعة",
+    "BUTTON_SEND": "أرسل الرسالة \u2192",
+    "BUTTON_SENT": "\u2713 تم الإرسال! سأرد خلال 24 ساعة",
     "EMAIL_MAIN": "bader.semah1@gmail.com",
     "EMAIL_SUB": "البريد الإلكتروني — مفضل للنقاشات التقنية",
     "LINKEDIN_MAIN": "linkedin.com/in/semah-bader",

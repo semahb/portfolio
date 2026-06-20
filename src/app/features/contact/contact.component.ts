@@ -15,7 +15,7 @@ import { CONTACT_LINKS } from '../../core/data/portfolio.data';
 export class ContactComponent {
   contactLinks = CONTACT_LINKS;
   contactForm: FormGroup;
-  submitButtonText = signal('Send Message →');
+  submitButtonKey = signal('CONTACT.BUTTON_SEND');
   isSubmitted = signal(false);
 
   constructor(private fb: FormBuilder, private translate: TranslateService) {
@@ -29,11 +29,11 @@ export class ContactComponent {
 
   onSubmit(): void {
     if (this.contactForm.valid) {
-      this.submitButtonText.set('✓ Sent! I\'ll reply within 24h');
+      this.submitButtonKey.set('CONTACT.BUTTON_SENT');
       this.isSubmitted.set(true);
 
       setTimeout(() => {
-        this.submitButtonText.set('Send Message →');
+        this.submitButtonKey.set('CONTACT.BUTTON_SEND');
         this.isSubmitted.set(false);
         this.contactForm.reset();
       }, 4000);

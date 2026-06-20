@@ -2,10 +2,8 @@
   <div class="proj-header">
     <div>
       <div class="slabel">{{ 'PROJECTS.TITLE' | translate }}</div>
-      <h2 class="stitle">Four products. <em>Four different problems solved.</em></h2>
-      <p class="ssub" style="margin-bottom: 0">
-        Click any project to see what was built and why it mattered.
-      </p>
+      <h2 class="stitle">{{ 'PROJECTS.SUBTITLE' | translate }}</h2>
+      <p class="ssub" style="margin-bottom: 0">{{ 'PROJECTS.SUBTITLE2' | translate }}</p>
     </div>
     <div class="proj-filters">
       @for (filter of filters; track filter) {
@@ -33,10 +31,10 @@
           <div class="prow-num">{{ project.number }}</div>
           <div class="prow-main">
             <div class="prow-top">
-              <span class="prow-name">{{ project.name }}</span>
-              <span class="prow-tag">{{ project.tag }}</span>
+              <span class="prow-name">{{ (getProjectKey(i) + '_NAME') | translate }}</span>
+              <span class="prow-tag">{{ (getProjectKey(i) + '_TAG') | translate }}</span>
             </div>
-            <div class="prow-outcome">{{ project.outcome }}</div>
+            <div class="prow-outcome">{{ (getProjectKey(i) + '_OUTCOME') | translate }}</div>
           </div>
           <div class="prow-right">
             <div class="prow-stack">
@@ -49,7 +47,7 @@
           <div class="prow-detail" [class.open]="expandedIndex === i">
             <div class="prow-detail-inner">
               <div>
-                <p class="prow-desc">{{ project.description }}</p>
+                <p class="prow-desc">{{ (getProjectKey(i) + '_DESC') | translate }}</p>
                 <div class="prow-arch">
                   @for (node of project.archNodes; track node.label) {
                     <span class="pan" [class.a]="node.highlighted">{{ node.label }}</span>
@@ -62,7 +60,7 @@
                 class="prow-cta"
                 [attr.data-testid]="'project-cta-' + project.number"
               >
-                {{ project.cta.label }}
+                {{ (getProjectKey(i) + '_CTA') | translate }}
               </a>
             </div>
           </div>
