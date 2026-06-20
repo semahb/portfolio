@@ -29,7 +29,15 @@
   },
   "TRUST": {
     "TITLE": "Trusted by teams building at scale",
-    "LABEL": "Shipped for"
+    "LABEL": "Shipped for",
+    "CHIP_0": "SaaS Platforms",
+    "CHIP_1": "Gov Clients \ud83c\udde6\ud83c\uddf8",
+    "CHIP_2": "Healthcare",
+    "CHIP_3": "EdTech",
+    "CHIP_4": "IoT Systems",
+    "CHIP_5": "Recruitment Tools",
+    "CHIP_6": "Real-time Apps",
+    "CHIP_7": "Telemedicine"
   },
   "SERVICES": {
     "LABEL": "WHAT I DO",
