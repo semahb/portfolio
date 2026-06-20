@@ -15,6 +15,6 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Angular 17+ (esbuild builder) outputs to dist/<project-name>/browser
 # If your Angular project name isn't "portfolio", change the path below to match.
-COPY --from=build /app/dist/portfolio/browser /usr/share/nginx/html
+COPY --from=build /app/dist/portfolio /usr/share/nginx/html
 
 EXPOSE 2000
