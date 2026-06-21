@@ -1677,7 +1677,7 @@ html[dir='rtl'] {
     transform: translateX(18px);
   }
   [data-theme='light'] .tbtn::after {
-    transform: none;
+    transform: translateX(0);
   }
 
   .tl {
