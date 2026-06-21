@@ -134,7 +134,10 @@
     "LEVEL_ADVANCED": "Advanced",
     "LEVEL_STRONG": "Strong",
     "LEVEL_NATIVE": "Native",
-    "LEVEL_PRO": "Professional"
+    "LEVEL_PRO": "Professional",
+    "LANG_ARABIC": "Arabic",
+    "LANG_ENGLISH": "English",
+    "LANG_FRENCH": "French"
   },
   "EXPERIENCE": {
     "TITLE": "Experience",

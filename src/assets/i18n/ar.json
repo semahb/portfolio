@@ -134,7 +134,10 @@
     "LEVEL_ADVANCED": "متقدم",
     "LEVEL_STRONG": "قوي",
     "LEVEL_NATIVE": "أصلي",
-    "LEVEL_PRO": "احترافي"
+    "LEVEL_PRO": "احترافي",
+    "LANG_ARABIC": "العربية",
+    "LANG_ENGLISH": "الإنجليزية",
+    "LANG_FRENCH": "الفرنسية"
   },
   "EXPERIENCE": {
     "TITLE": "الخبرة",
