@@ -78,11 +78,19 @@ export class HomeComponent implements AfterViewInit {
 
       requestAnimationFrame(() => {
         let cur = '';
-        secs.forEach((s) => {
-          if (s.getBoundingClientRect().top <= 130) cur = s.id;
-        });
-        if (!cur && secs.length > 0) {
+        const nearBottom =
+          window.innerHeight + window.scrollY >=
+          document.documentElement.scrollHeight - 50;
+
+        if (nearBottom) {
           cur = secs[secs.length - 1].id;
+        } else {
+          secs.forEach((s) => {
+            if (s.getBoundingClientRect().top <= 130) cur = s.id;
+          });
+          if (!cur && secs.length > 0) {
+            cur = secs[secs.length - 1].id;
+          }
         }
         nas.forEach((a) => {
           a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
