@@ -1,7 +1,8 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef, inject, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
 import { SKILL_GROUPS, PROFICIENCY_ITEMS, LANGUAGE_CARDS } from '../../core/data/portfolio.data';
+import { TranslationService } from '../../core/services/translation.service';
 
 @Component({
   selector: 'app-skills',
@@ -12,9 +13,19 @@ import { SKILL_GROUPS, PROFICIENCY_ITEMS, LANGUAGE_CARDS } from '../../core/data
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SkillsComponent {
+  private translationService = inject(TranslationService);
+  private cdr = inject(ChangeDetectorRef);
+
   skillGroups = SKILL_GROUPS;
   proficiencies = PROFICIENCY_ITEMS;
   languages = LANGUAGE_CARDS;
+
+  constructor() {
+    effect(() => {
+      this.translationService.currentLanguage();
+      this.cdr.markForCheck();
+    });
+  }
 
   getProficiencyKey(name: string): string {
     const keys: Record<string, string> = {
