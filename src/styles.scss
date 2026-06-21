@@ -1678,8 +1678,10 @@ html[dir='rtl'] {
   .tbtn::after {
     --pos: 18px;
   }
-  [data-theme='light'] .tbtn::after {
-    --pos: 0px;
+  &[data-theme='light'] {
+    .tbtn::after {
+      --pos: 0px;
+    }
   }
 
   .tl {
