@@ -213,7 +213,7 @@ nav {
   height: 16px;
   border-radius: 50%;
   top: 2px;
-  inset-inline-start: 2px;
+  left: 2px;
   background: var(--indigo);
   transition: transform 0.3s var(--ease);
 }
@@ -1673,8 +1673,11 @@ html[dir='rtl'] {
     margin-left: 0;
   }
 
+  .tbtn::after {
+    transform: translateX(18px);
+  }
   [data-theme='light'] .tbtn::after {
-    transform: translateX(-18px);
+    transform: none;
   }
 
   .tl {
