@@ -59,4 +59,13 @@ export class SkillsComponent {
     };
     return keys[level] || level;
   }
+
+  getLanguageNameKey(name: string): string {
+    const keys: Record<string, string> = {
+      'Arabic': 'SKILLS.LANG_ARABIC',
+      'English': 'SKILLS.LANG_ENGLISH',
+      'French': 'SKILLS.LANG_FRENCH'
+    };
+    return keys[name] || name;
+  }
 }
