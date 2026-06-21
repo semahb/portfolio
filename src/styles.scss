@@ -214,12 +214,14 @@ nav {
   border-radius: 50%;
   top: 2px;
   left: 2px;
+  --pos: 0px;
+  transform: translateX(var(--pos));
   background: var(--indigo);
   transition: transform 0.3s var(--ease);
 }
 
 [data-theme="light"] .tbtn::after {
-  transform: translateX(18px);
+  --pos: 18px;
 }
 
 .hire-btn {
@@ -1674,10 +1676,10 @@ html[dir='rtl'] {
   }
 
   .tbtn::after {
-    transform: translateX(18px);
+    --pos: 18px;
   }
   [data-theme='light'] .tbtn::after {
-    transform: translateX(0);
+    --pos: 0px;
   }
 
   .tl {
