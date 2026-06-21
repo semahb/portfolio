@@ -64,10 +64,14 @@
             data-testid="contact-message-textarea"
           ></textarea>
         </div>
+        @if (hasError()) {
+          <div class="ferror">{{ 'CONTACT.BUTTON_ERROR' | translate }}</div>
+        }
         <button
           type="submit"
           class="fsub"
-          [style.background]="isSubmitted() ? '#10b981' : ''"
+          [style.background]="isSubmitted() ? '#10b981' : hasError() ? '#ef4444' : ''"
+          [disabled]="contactForm.invalid || isSending()"
           data-testid="contact-submit-btn"
         >
           {{ submitButtonKey() | translate }}
