@@ -32,7 +32,7 @@
         @for (lang of languages; track lang.name) {
           <div class="lcard" [attr.data-testid]="'language-' + lang.name">
             <div class="ln">{{ lang.name }}</div>
-            <div class="ll">{{ lang.level }}</div>
+            <div class="ll">{{ getLanguageLevelKey(lang.level) | translate }}</div>
           </div>
         }
       </div>
