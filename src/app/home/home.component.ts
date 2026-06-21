@@ -79,7 +79,7 @@ export class HomeComponent implements AfterViewInit {
       requestAnimationFrame(() => {
         let cur = '';
         secs.forEach((s) => {
-          if (window.scrollY >= s.offsetTop - 130) cur = s.id;
+          if (s.getBoundingClientRect().top <= 130) cur = s.id;
         });
         if (!cur && secs.length > 0) {
           cur = secs[secs.length - 1].id;
