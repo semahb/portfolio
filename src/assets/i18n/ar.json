@@ -132,7 +132,9 @@
     "SKILL_DEVOPS": "DevOps والأدوات",
     "LEVEL_EXPERT": "خبير",
     "LEVEL_ADVANCED": "متقدم",
-    "LEVEL_STRONG": "قوي"
+    "LEVEL_STRONG": "قوي",
+    "LEVEL_NATIVE": "أصلي",
+    "LEVEL_PRO": "احترافي"
   },
   "EXPERIENCE": {
     "TITLE": "الخبرة",

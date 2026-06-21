@@ -132,7 +132,9 @@
     "SKILL_DEVOPS": "DevOps & Outils",
     "LEVEL_EXPERT": "Expert",
     "LEVEL_ADVANCED": "Avancé",
-    "LEVEL_STRONG": "Solide"
+    "LEVEL_STRONG": "Solide",
+    "LEVEL_NATIVE": "Natif",
+    "LEVEL_PRO": "Professionnel"
   },
   "EXPERIENCE": {
     "TITLE": "Expérience",

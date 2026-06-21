@@ -40,4 +40,12 @@ export class SkillsComponent {
     };
     return keys[level] || level;
   }
+
+  getLanguageLevelKey(level: string): string {
+    const keys: Record<string, string> = {
+      'Native': 'SKILLS.LEVEL_NATIVE',
+      'Pro': 'SKILLS.LEVEL_PRO'
+    };
+    return keys[level] || level;
+  }
 }
