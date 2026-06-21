@@ -861,6 +861,7 @@ section {
   position: relative;
   z-index: 1;
   flex-shrink: 0;
+  min-width: 14rem;
 }
 
 .prow-stack {
@@ -868,7 +869,7 @@ section {
   gap: 0.35rem;
   flex-wrap: wrap;
   justify-content: flex-end;
-  max-width: 260px;
+  max-width: 400px;
 }
 
 .ps2 {
@@ -1757,7 +1758,7 @@ html[dir='rtl'] {
     background: linear-gradient(270deg, transparent, var(--indigo), var(--indigo), transparent);
   }
 
-  .prow { grid-template-columns: auto 1fr 3.5rem; }
+  .prow-right { align-items: flex-start; }
 }
 
 html.lang-ar .fi,
