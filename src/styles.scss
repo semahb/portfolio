@@ -1753,7 +1753,6 @@ html[dir='rtl'] {
   .blob-1 { right: auto; left: 0; }
   .blob-2 { left: auto; right: 8%; }
 
-  .pgrid2 { direction: ltr; }
   .pgrid2::before {
     background: linear-gradient(270deg, transparent, var(--indigo), var(--indigo), transparent);
   }
