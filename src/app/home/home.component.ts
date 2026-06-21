@@ -68,16 +68,26 @@ export class HomeComponent implements AfterViewInit {
   }
 
   private initializeNavActiveLink(): void {
-    const secs = document.querySelectorAll('section[id]');
-    const nas = document.querySelectorAll('.nav-links a');
+    const secs = document.querySelectorAll<HTMLElement>('section[id]');
+    const nas = document.querySelectorAll<HTMLAnchorElement>('.nav-links a');
+    let ticking = false;
 
     window.addEventListener('scroll', () => {
-      let cur = '';
-      secs.forEach((s: any) => {
-        if (s.getBoundingClientRect().top <= 130) cur = s.id;
-      });
-      nas.forEach((a: any) => {
-        a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+      if (ticking) return;
+      ticking = true;
+
+      requestAnimationFrame(() => {
+        let cur = '';
+        secs.forEach((s) => {
+          if (s.getBoundingClientRect().top <= 130) cur = s.id;
+        });
+        if (!cur && secs.length > 0) {
+          cur = secs[secs.length - 1].id;
+        }
+        nas.forEach((a) => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+        });
+        ticking = false;
       });
     }, { passive: true });
   }
