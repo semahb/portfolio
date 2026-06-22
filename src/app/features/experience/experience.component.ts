@@ -17,4 +17,8 @@ export class ExperienceComponent {
   getExperienceKeyPrefix(index: number): string {
     return `EXPERIENCE.EXP${index + 1}`;
   }
+
+  getWorkTypeKey(workType: string): string {
+    return `EXPERIENCE.WORKTYPE_${workType.toUpperCase()}`;
+  }
 }

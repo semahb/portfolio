@@ -170,7 +170,9 @@
     "EXP4_DESC": "تسليم منفرد لمنصة طب عن بعد كاملة في 6 أشهر.",
     "EXP4_BULLET1": "سجلات المرضى وتقارير الأشعة وجدولة المواعيد",
     "EXP4_BULLET2": "وصفات إلكترونية بتوقيع رقمي QR Code",
-    "EXP4_BULLET3": "نظام مصادقة JWT + Spring Security"
+    "EXP4_BULLET3": "نظام مصادقة JWT + Spring Security",
+    "WORKTYPE_REMOTE": "عن بُعد بالكامل",
+    "WORKTYPE_HYBRID": "هجين"
   },
   "CONTACT": {
     "TITLE": "لنبني شيئًا رائعًا معًا",
