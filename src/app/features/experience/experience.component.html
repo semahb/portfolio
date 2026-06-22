@@ -10,6 +10,9 @@
           @if (item.badge) {
             <span class="tbadge">{{ (getExperienceKeyPrefix(i) + '_BADGE') | translate }}</span>
           }
+          @if (item.workType) {
+            <span class="tbadge worktype-{{ item.workType }}">{{ getWorkTypeKey(item.workType) | translate }}</span>
+          }
         </div>
         <div class="trole">{{ (getExperienceKeyPrefix(i) + '_ROLE') | translate }}</div>
         <div class="tco">{{ (getExperienceKeyPrefix(i) + '_COMPANY') | translate }}</div>

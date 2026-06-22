@@ -75,6 +75,7 @@ export interface ExperienceBullet {
 export interface ExperienceItem {
   period: string;
   badge: string;
+  workType?: 'remote' | 'hybrid';
   role: string;
   company: string;
   description: string;
@@ -332,7 +333,8 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
       { text: 'ZATCA-compliant app for secure import/export management' },
       { text: 'Microservices platform for SIRC government operations' }
     ],
-    techs: ['Spring Boot', 'Spring Cloud', 'Keycloak', 'PostgreSQL', 'ThingsBoard', 'Jenkins', 'SonarQube'],
+    techs: ['Spring Boot', 'Spring Cloud', 'Keycloak', 'PostgreSQL', 'ThingsBoard', 'Jenkins', 'SonarQube'    ],
+    workType: 'hybrid',
     isLive: true
   },
   {
@@ -346,7 +348,8 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
       { text: 'Built secure test-taking engine, subscription billing, customer support module' },
       { text: 'Full CI/CD: Jenkins → SonarQube → Nexus → Docker → Grafana monitoring' }
     ],
-    techs: ['Spring Boot', 'Angular', 'Keycloak', 'Docker', 'Grafana', 'PostgreSQL'],
+    techs: ['Spring Boot', 'Angular', 'Keycloak', 'Docker', 'Grafana', 'PostgreSQL'    ],
+    workType: 'remote',
     isLive: false
   },
   {
@@ -360,7 +363,8 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
       { text: 'AI-powered message autocomplete for better UX' },
       { text: 'ElasticSearch full-text search across the platform' }
     ],
-    techs: ['Spring Boot', 'WebSockets', 'Angular', 'ElasticSearch', 'MySQL'],
+    techs: ['Spring Boot', 'WebSockets', 'Angular', 'ElasticSearch', 'MySQL'    ],
+    workType: 'remote',
     isLive: false
   },
   {
@@ -374,7 +378,8 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
       { text: 'Electronic prescriptions with QR Code digital signature' },
       { text: 'JWT + Spring Security authentication system' }
     ],
-    techs: ['Spring Boot', 'Spring Security', 'JWT', 'Angular', 'MySQL'],
+    techs: ['Spring Boot', 'Spring Security', 'JWT', 'Angular', 'MySQL'    ],
+    workType: 'remote',
     isLive: false
   }
 ];

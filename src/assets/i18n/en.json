@@ -170,7 +170,9 @@
     "EXP4_DESC": "Solo delivery of a complete telemedicine platform in 6 months.",
     "EXP4_BULLET1": "Patient records, radiology reports, appointment scheduling",
     "EXP4_BULLET2": "Electronic prescriptions with QR Code digital signature",
-    "EXP4_BULLET3": "JWT + Spring Security authentication system"
+    "EXP4_BULLET3": "JWT + Spring Security authentication system",
+    "WORKTYPE_REMOTE": "Fully Remote",
+    "WORKTYPE_HYBRID": "Hybrid"
   },
   "CONTACT": {
     "TITLE": "Let's create something great together",

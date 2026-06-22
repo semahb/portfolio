@@ -170,7 +170,9 @@
     "EXP4_DESC": "Livraison solo d'une plateforme de télémédecine complète en 6 mois.",
     "EXP4_BULLET1": "Dossiers patients, rapports de radiologie, planification des rendez-vous",
     "EXP4_BULLET2": "Ordonnances électroniques avec signature numérique Code QR",
-    "EXP4_BULLET3": "Système d'authentification JWT + Spring Security"
+    "EXP4_BULLET3": "Système d'authentification JWT + Spring Security",
+    "WORKTYPE_REMOTE": "100% Télétravail",
+    "WORKTYPE_HYBRID": "Hybride"
   },
   "CONTACT": {
     "TITLE": "Créons quelque chose de fantastique ensemble",
