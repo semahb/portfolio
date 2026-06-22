@@ -109,7 +109,7 @@ export const KPI_ITEMS: KPIItem[] = [
 
 export const TRUST_CHIPS: TrustChip[] = [
   { label: 'SaaS Platforms' },
-  { label: 'Gov Clients 🇸🇦' },
+  { label: 'Gov Clients' },
   { label: 'Healthcare' },
   { label: 'EdTech' },
   { label: 'IoT Systems' },
@@ -326,7 +326,7 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
     period: 'Feb 2025 — Present',
     badge: 'Current',
     role: 'Backend Java Developer',
-    company: 'IOTsquared — Saudi Arabia 🇸🇦',
+    company: 'IOTsquared — Tunisia 🇹🇳',
     description: 'Engineering backend systems for Saudi government clients with strict compliance, security standards, and high reliability requirements.',
     bullets: [
       { text: 'IoT waste management platform with ThingsBoard — Riyadh Municipality' },
@@ -341,7 +341,7 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
     period: 'Jan 2024 — Aug 2024',
     badge: '',
     role: 'Full-Stack Java Developer',
-    company: 'Qodexia — Tunisia 🇹🇳',
+    company: 'Qodexia — France 🇫🇷',
     description: 'Led full-stack development of a SaaS recruitment Evaliqo, from identity infrastructure to payment integration and complete DevOps automation.',
     bullets: [
       { text: 'Architected Identity Provider Service with Keycloak + Spring Cloud Gateway' },
