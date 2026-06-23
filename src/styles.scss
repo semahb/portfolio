@@ -1217,7 +1217,7 @@ section {
 
 .tdot {
   position: absolute;
-  left: -2.3rem;
+  left: -2.4rem;
   top: 0.38rem;
   width: 0.9rem;
   height: 0.9rem;
@@ -1727,7 +1727,7 @@ footer {
   }
 
   .tdot {
-    left: -1.1rem;
+    left: -1.2rem;
   }
 
   .fsub {
@@ -1801,7 +1801,7 @@ html[dir='rtl'] {
   }
   .tdot {
     left: auto;
-    right: -2.3rem;
+    right: -2.4rem;
   }
 
   .tbuls li {
@@ -1866,7 +1866,13 @@ html[dir='rtl'] {
   @media (max-width: 768px) {
     .tl { padding-left: 0; padding-right: 0.8rem; }
     .tli { padding: 0 1.8rem 2.5rem 0; }
-    .tdot { right: -1.1rem; left: auto; }
+    .tdot { right: -1.2rem; left: auto; }
+  }
+
+  @media (max-width: 768px) {
+    .nav-r {
+      flex-direction: row-reverse;
+    }
   }
 }
 
@@ -1901,12 +1907,12 @@ html.lang-ar .fta {
   }
 
   .tdot {
-    left: -1.1rem;
+    left: -1.2rem;
   }
 
   html[dir='rtl'] .tdot {
-    right: -1.1rem;
     left: auto;
+    right: -1.2rem;
   }
 
   .tlabel,
