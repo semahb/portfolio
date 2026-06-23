@@ -9,8 +9,18 @@
     <button class="tbtn" (click)="toggleTheme()" title="Toggle theme" data-testid="nav-theme-toggle"></button>
     <app-lang-switcher></app-lang-switcher>
     <a [href]="hireEmailHref" class="hire-btn" data-testid="nav-hire-btn">{{ 'NAV.HIRE' | translate }}</a>
-    <div class="mob-tog" (click)="toggleMobileMenu()" data-testid="nav-mobile-toggle">
+    <div class="mob-tog" [class.open]="isMobileMenuOpen" (click)="toggleMobileMenu()" data-testid="nav-mobile-toggle">
       <span></span><span></span><span></span>
     </div>
   </div>
+  @if (isMobileMenuOpen) {
+    <div class="mob-menu" (click)="toggleMobileMenu()">
+      <ul class="mob-links">
+        @for (link of navLinks; track link.href) {
+          <li><a [href]="link.href" (click)="toggleMobileMenu()" [attr.data-testid]="'mob-' + stripHash(link.href)">{{ link.label | translate }}</a></li>
+        }
+        <li><a [href]="hireEmailHref" (click)="toggleMobileMenu()" data-testid="mob-hire">{{ 'NAV.HIRE' | translate }}</a></li>
+      </ul>
+    </div>
+  }
 </nav>
