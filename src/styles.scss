@@ -1610,6 +1610,9 @@ footer {
   nav {
     padding: 0 4%;
   }
+  .nav-links {
+    gap: 1.2rem;
+  }
   section {
     padding: 5rem 4%;
   }
@@ -1648,6 +1651,9 @@ footer {
 
 @media (max-width: 768px) {
   .nav-links {
+    display: none;
+  }
+  .hire-btn {
     display: none;
   }
   .mob-tog {
@@ -1718,6 +1724,10 @@ footer {
 
   .tli {
     padding: 0 0 2.5rem 1.8rem;
+  }
+
+  .tdot {
+    left: -1.1rem;
   }
 
   .fsub {
@@ -1856,6 +1866,7 @@ html[dir='rtl'] {
   @media (max-width: 768px) {
     .tl { padding-left: 0; padding-right: 0.8rem; }
     .tli { padding: 0 1.8rem 2.5rem 0; }
+    .tdot { right: -1.1rem; left: auto; }
   }
 }
 
@@ -1884,9 +1895,18 @@ html.lang-ar .fta {
     padding-right: 0;
   }
 
+  .tdot {
+    left: -1.1rem;
+  }
+
   html[dir='rtl'] .tli {
     padding-left: 0;
     padding-right: 1.2rem;
+  }
+
+  html[dir='rtl'] .tdot {
+    left: auto;
+    right: -1.1rem;
   }
 
   .tlabel,
