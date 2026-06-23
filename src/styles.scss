@@ -1644,6 +1644,9 @@ footer {
     flex-direction: column;
     align-items: flex-start;
   }
+  nav .nav-links {
+    gap: 1.2rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1652,6 +1655,9 @@ footer {
   }
   .mob-tog {
     display: flex;
+  .hire-btn {
+    display: none;
+  }
   }
   .h1 {
     font-size: clamp(2.5rem, 9vw, 3.8rem);
@@ -1718,6 +1724,10 @@ footer {
 
   .tli {
     padding: 0 0 2.5rem 1.8rem;
+  }
+
+  .tdot {
+    left: -1.1rem;
   }
 
   .fsub {
@@ -1856,6 +1866,7 @@ html[dir='rtl'] {
   @media (max-width: 768px) {
     .tl { padding-left: 0; padding-right: 0.8rem; }
     .tli { padding: 0 1.8rem 2.5rem 0; }
+    .tdot { right: -1.1rem; left: auto; }
   }
 }
 
@@ -1889,6 +1900,15 @@ html.lang-ar .fta {
     padding-right: 1.2rem;
   }
 
+  .tdot {
+    left: -1.1rem;
+  }
+
+  html[dir='rtl'] .tdot {
+    right: -1.1rem;
+    left: auto;
+  }
+
   .tlabel,
   .ps2,
   .prow-cta {
@@ -1896,3 +1916,4 @@ html.lang-ar .fta {
     overflow-wrap: break-word;
   }
 }
+
