@@ -1,28 +1,21 @@
-<header>
-  <nav>
-    <a href="#hero" class="logo" data-testid="nav-logo">Bader<span>.</span></a>
-    <ul class="nav-links">
-      @for (link of navLinks; track link.href) {
-        <li><a [href]="link.href" data-testid="nav-link">{{ link.label | translate }}</a></li>
-      }
-    </ul>
-    <div class="nav-r">
-      <button class="tbtn" (click)="toggleTheme()" title="Toggle theme" data-testid="nav-theme-toggle"></button>
-      <app-lang-switcher></app-lang-switcher>
-      <a [href]="hireEmailHref" class="hire-btn" data-testid="nav-hire-btn">{{ 'NAV.HIRE' | translate }}</a>
-      <div class="mob-tog"
-           [class.open]="isMobileMenuOpen"
-           (click)="toggleMobileMenu()"
-           data-testid="nav-mobile-toggle"
-           aria-label="Toggle navigation menu"
-           [attr.aria-expanded]="isMobileMenuOpen">
-        <span></span><span></span><span></span>
-      </div>
+<nav>
+  <a href="#hero" class="logo" data-testid="nav-logo">Bader<span>.</span></a>
+  <ul class="nav-links">
+    @for (link of navLinks; track link.href) {
+      <li><a [href]="link.href" data-testid="nav-link">{{ link.label | translate }}</a></li>
+    }
+  </ul>
+  <div class="nav-r">
+    <button class="tbtn" (click)="toggleTheme()" title="Toggle theme" data-testid="nav-theme-toggle"></button>
+    <app-lang-switcher></app-lang-switcher>
+    <a [href]="hireEmailHref" class="hire-btn" data-testid="nav-hire-btn">{{ 'NAV.HIRE' | translate }}</a>
+    <div class="mob-tog" [class.open]="isMobileMenuOpen" (click)="toggleMobileMenu()" data-testid="nav-mobile-toggle">
+      <span></span><span></span><span></span>
     </div>
-  </nav>
+  </div>
   @if (isMobileMenuOpen) {
-    <div class="mob-menu" (click)="toggleMobileMenu()" data-testid="nav-mobile-menu">
-      <ul class="mob-links" (click)="$event.stopPropagation()" data-testid="nav-mobile-links">
+    <div class="mob-menu" (click)="toggleMobileMenu()">
+      <ul class="mob-links">
         @for (link of navLinks; track link.href) {
           <li><a [href]="link.href" (click)="toggleMobileMenu()" [attr.data-testid]="'mob-' + stripHash(link.href)">{{ link.label | translate }}</a></li>
         }
@@ -30,4 +23,4 @@
       </ul>
     </div>
   }
-</header>
+</nav>
