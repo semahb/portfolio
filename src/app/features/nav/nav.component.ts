@@ -45,4 +45,8 @@ export class NavComponent {
   getTestId(label: string): string {
     return 'nav-link-' + label.toLowerCase().replace(/\s+/g, '-');
   }
+
+  stripHash(href: string): string {
+    return href.replace('#', '');
+  }
 }
