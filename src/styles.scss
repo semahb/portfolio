@@ -1406,6 +1406,45 @@ footer a:hover {
     align-self: stretch;
     text-align: center;
   }
+
+  .proj-header {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .prow {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    padding: 1.2rem 0;
+  }
+
+  .prow-right {
+    min-width: 0;
+    align-items: flex-start;
+  }
+
+  .prow-detail-inner {
+    grid-template-columns: 1fr;
+    padding: 1rem 0 1.5rem 0;
+  }
+
+  .lcards {
+    grid-template-columns: 1fr;
+  }
+
+  .tl {
+    padding-left: 0.8rem;
+  }
+
+  .tli {
+    padding: 0 0 2.5rem 1.8rem;
+  }
+
+  .fsub {
+    width: 100%;
+    align-self: stretch;
+    text-align: center;
+  }
 }
 
 /* Arabic font */
@@ -1570,6 +1609,7 @@ html.lang-ar .fta {
     left: -1.1rem;
   }
 
+
   html[dir='rtl'] .tli {
     padding-left: 0;
     padding-right: 1.2rem;
@@ -1579,6 +1619,7 @@ html.lang-ar .fta {
     left: auto;
     right: -1.1rem;
   }
+
 
   .tlabel,
   .ps2,
