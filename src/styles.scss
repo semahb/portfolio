@@ -1872,12 +1872,6 @@ html[dir='rtl'] {
     .tli { padding: 0 1.8rem 2.5rem 0; }
     .tdot { right: -1.2rem; left: auto; }
   }
-
-  @media (max-width: 768px) {
-    .nav-r {
-      flex-direction: row-reverse;
-    }
-  }
 }
 
 html.lang-ar .fi,
