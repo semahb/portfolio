@@ -9,7 +9,7 @@
     <div class="nav-r">
       <button class="tbtn" (click)="toggleTheme()" title="Toggle theme" data-testid="nav-theme-toggle"></button>
       <app-lang-switcher></app-lang-switcher>
-      <a [href]="hireEmailHref" class="hire-btn" data-testid="nav-hire-btn">{{ 'NAV.HIRE' | translate }}</a>
+      <a [href]="hireEmailHref" class="hire-btn" [class.hidden]="isMobileMenuOpen" data-testid="nav-hire-btn">{{ 'NAV.HIRE' | translate }}</a>
       <div class="mob-tog"
            [class.open]="isMobileMenuOpen"
            (click)="toggleMobileMenu()"

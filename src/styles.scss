@@ -241,6 +241,10 @@ nav {
   transform: translateY(-1px);
 }
 
+.hire-btn.hidden {
+  display: none;
+}
+
 /* HERO */
 #hero {
   min-height: 100vh;
@@ -1655,9 +1659,9 @@ footer {
   }
   .mob-tog {
     display: flex;
+  }
   .hire-btn {
     display: none;
-  }
   }
   .h1 {
     font-size: clamp(2.5rem, 9vw, 3.8rem);
