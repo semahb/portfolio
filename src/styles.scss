@@ -1873,6 +1873,19 @@ html[dir='rtl'] {
   .prow-right { align-items: flex-start; }
 
   @media (max-width: 768px) {
+    .kpi {
+      padding-right: 0;
+      margin-right: 0;
+      padding-left: 2rem;
+      margin-left: 2rem;
+      border-right: none;
+      border-left: 1px solid var(--border);
+    }
+    .kpi:last-child {
+      border-left: none;
+      padding-left: 0;
+      margin-left: 0;
+    }
     .tl { padding-left: 0; padding-right: 0.8rem; }
     .tli { padding: 0 1.8rem 2.5rem 0; }
     .tdot { right: -1.2rem; left: auto; }
@@ -1897,6 +1910,19 @@ html.lang-ar .fta {
   .kpi {
     padding-right: 1rem;
     margin-right: 1rem;
+  }
+  html[dir='rtl'] .kpi {
+    padding-right: 0;
+    margin-right: 0;
+    padding-left: 1rem;
+    margin-left: 1rem;
+    border-right: none;
+    border-left: 1px solid var(--border);
+  }
+  html[dir='rtl'] .kpi:last-child {
+    border-left: none;
+    padding-left: 0;
+    margin-left: 0;
   }
 
   .tli {
