@@ -1718,6 +1718,11 @@ footer {
     padding: 1rem 0 1.5rem 0;
   }
 
+  .prow::before {
+    left: 0;
+    right: 0;
+  }
+
   .lcards {
     grid-template-columns: 1fr;
   }
