@@ -325,15 +325,17 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
   {
     period: 'Feb 2025 — Present',
     badge: 'Current',
-    role: 'Backend Java Developer',
+    role: 'Full Stack Web Developer',
     company: 'IOTsquared — Tunisia 🇹🇳',
-    description: 'Engineering backend systems for Saudi government clients with strict compliance, security standards, and high reliability requirements.',
+    description: 'Developed and maintained Necleus, an enterprise ecosystem of web applications used by major public-sector organizations across Saudi Arabia. The platform supports waste management, fleet management, contracting, landfill operations, planning, and real-time monitoring, integrating IoT data through ThingsBoard to provide operational visibility and analytics.\n\nResponsibilities\nDesigned, developed, and maintained full-stack features using Java, Spring Boot, Angular, and PostgreSQL.\nBuilt and enhanced RESTful APIs and responsive user interfaces for multiple business modules.\nIntegrated ThingsBoard telemetry into the platform to deliver real-time monitoring and operational insights.\nCollaborated with cross-functional teams in an Agile environment to deliver high-quality enterprise software.\nParticipated in code reviews, bug fixing, performance tuning, and continuous application improvements.\n\nKey Achievements\nOptimized the platform real-time monitoring map, improving the performance and responsiveness of live vehicle and asset tracking across multiple business domains.\nReduced the Angular application build time by approximately 50%, significantly improving development workflow and CI/CD efficiency.\nContributed to the implementation of a scalable real-time architecture using WebSockets, Redis, Kafka, and PostgreSQL to process and distribute live telemetry data.\nDelivered features supporting critical operations for Riyadh Municipality, ZATCA, SIRC, and multiple Saudi government ministries.\nContributed to the continuous evolution of a large-scale enterprise platform composed of multiple interconnected applications.',
     bullets: [
-      { text: 'IoT waste management platform with ThingsBoard — Riyadh Municipality' },
-      { text: 'ZATCA-compliant app for secure import/export management' },
-      { text: 'Microservices platform for SIRC government operations' }
+      { text: 'Optimized the platform real-time monitoring map, improving the performance and responsiveness of live vehicle and asset tracking across multiple business domains.' },
+      { text: 'Reduced the Angular application build time by approximately 50%, significantly improving development workflow and CI/CD efficiency.' },
+      { text: 'Contributed to the implementation of a scalable real-time architecture using WebSockets, Redis, Kafka, and PostgreSQL to process and distribute live telemetry data.' },
+      { text: 'Delivered features supporting critical operations for Riyadh Municipality, ZATCA, SIRC, and multiple Saudi government ministries.' },
+      { text: 'Contributed to the continuous evolution of a large-scale enterprise platform composed of multiple interconnected applications.' }
     ],
-    techs: ['Spring Boot', 'Spring Cloud', 'Keycloak', 'PostgreSQL', 'ThingsBoard', 'Jenkins', 'SonarQube'    ],
+    techs: ['Java', 'Spring Boot', 'Angular', 'PostgreSQL', 'Kafka', 'Redis', 'WebSockets', 'ThingsBoard', 'Docker', 'Git'],
     workType: 'hybrid',
     isLive: true
   },
