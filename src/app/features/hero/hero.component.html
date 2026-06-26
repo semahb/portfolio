@@ -24,7 +24,7 @@
         <div class="kpi" [attr.data-testid]="'hero-kpi-' + kpi.id">
           <div class="kn">
             @if (kpi.id === 'YEARS') {
-              <span>{{ yearsCounter | number:'1.2-2' }}</span>
+              <span>{{ elapsedTime }}</span>
             } @else if (kpi.id === 'LANGUAGES') {
               <span>3</span>
             } @else if (kpi.id === 'INDUSTRIES') {
