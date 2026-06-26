@@ -22,13 +22,11 @@ export class HeroComponent {
     { id: 'SCALABILITY' }
   ];
 
-  readonly elapsedTime = HeroComponent.calcElapsed();
+  readonly yearsExp = HeroComponent.calcYearsExp();
 
-  private static calcElapsed(): string {
+  private static calcYearsExp(): number {
     const now = new Date();
     const totalMonths = (now.getUTCFullYear() - 2022) * 12 + (now.getUTCMonth() - 4);
-    const years = Math.floor(totalMonths / 12);
-    const months = totalMonths % 12;
-    return `${String(years).padStart(2, '0')}.${String(months).padStart(2, '0')}`;
+    return Math.floor(totalMonths / 12);
   }
 }
