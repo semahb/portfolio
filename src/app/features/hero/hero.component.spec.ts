@@ -29,13 +29,13 @@ describe('HeroComponent', () => {
     expect(badge).toBeTruthy();
   });
 
-  it('should calculate years counter greater than 0', () => {
-    expect(component.yearsCounter).toBeGreaterThan(0);
+  it('should set elapsedTime matching YYYY-MM-DD HH:mm:ss format', () => {
+    expect(component.elapsedTime).toMatch(/^\d{2}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/);
   });
 
-  it('should render years counter in the template', () => {
+  it('should render elapsedTime in the template in the correct format', () => {
     const el: HTMLElement = fixture.nativeElement.querySelector('[data-testid="hero-kpi-YEARS"] .kn span');
     expect(el).toBeTruthy();
-    expect(parseFloat(el.textContent ?? '0')).toBeGreaterThan(4);
+    expect(el.textContent).toMatch(/^\d{2}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/);
   });
 });
