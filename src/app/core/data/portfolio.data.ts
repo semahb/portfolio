@@ -342,15 +342,17 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
   {
     period: 'Jan 2024 — Aug 2024',
     badge: '',
-    role: 'Full-Stack Java Developer',
+    role: 'Full Stack Web Developer',
     company: 'Qodexia — France 🇫🇷',
-    description: 'Led full-stack development of a SaaS recruitment Evaliqo, from identity infrastructure to payment integration and complete DevOps automation.',
+    description: 'Contributed to the development of <a href="https://evaliqo.com" target="_blank" rel="noopener noreferrer"><strong>Evaliqo</strong></a>, an AI-powered SaaS recruitment platform that helps organizations streamline hiring through intelligent candidate sourcing, skills assessments, AI matching, and applicant tracking. The platform automates recruitment workflows while providing recruiters with powerful evaluation and decision-making tools.\n\nResponsibilities\nDeveloped full-stack features using Java, Spring Boot, Angular, and PostgreSQL.\nDesigned and implemented secure REST APIs and responsive user interfaces.\nIntegrated Keycloak to provide secure authentication, authorization, role-based access control (RBAC), and identity management.\nBuilt and enhanced recruitment workflows, candidate management, and evaluation modules.\nIntegrated AI-powered services to improve candidate qualification and matching.\nOptimized application performance, security, and scalability.\nCollaborated with cross-functional teams in an Agile/Scrum environment to deliver high-quality software.\n\nKey Achievements\nContributed to the development of an AI-powered recruitment platform, improving hiring and candidate evaluation workflows.\nImplemented secure authentication and authorization using Keycloak, enabling centralized identity management and fine-grained access control.\nDeveloped scalable backend services and responsive Angular interfaces for a cloud-based SaaS application.\nEnhanced application performance and user experience through frontend and backend optimizations.\nContributed to the continuous evolution of a secure, scalable, and maintainable enterprise recruitment platform.',
     bullets: [
-      { text: 'Architected Identity Provider Service with Keycloak + Spring Cloud Gateway' },
-      { text: 'Built secure test-taking engine, subscription billing, customer support module' },
-      { text: 'Full CI/CD: Jenkins → SonarQube → Nexus → Docker → Grafana monitoring' }
+      { text: 'Contributed to the development of an AI-powered recruitment platform, improving hiring and candidate evaluation workflows.' },
+      { text: 'Implemented secure authentication and authorization using Keycloak, enabling centralized identity management and fine-grained access control.' },
+      { text: 'Developed scalable backend services and responsive Angular interfaces for a cloud-based SaaS application.' },
+      { text: 'Enhanced application performance and user experience through frontend and backend optimizations.' },
+      { text: 'Contributed to the continuous evolution of a secure, scalable, and maintainable enterprise recruitment platform.' }
     ],
-    techs: ['Spring Boot', 'Angular', 'Keycloak', 'Docker', 'Grafana', 'PostgreSQL'    ],
+    techs: ['Java', 'Spring Boot', 'Angular', 'PostgreSQL', 'Keycloak', 'REST APIs', 'Docker', 'Git', 'JWT', 'OAuth 2.0', 'OpenID Connect (OIDC)', 'CI/CD', 'Agile/Scrum', 'AI Integration', 'SaaS Development'],
     workType: 'remote',
     isLive: false
   },
