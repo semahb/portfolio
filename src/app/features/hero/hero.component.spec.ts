@@ -28,4 +28,14 @@ describe('HeroComponent', () => {
     const badge = fixture.nativeElement.querySelector('[data-testid="hero-badge"]');
     expect(badge).toBeTruthy();
   });
+
+  it('should calculate years counter greater than 0', () => {
+    expect(component.yearsCounter).toBeGreaterThan(0);
+  });
+
+  it('should render years counter in the template', () => {
+    const el: HTMLElement = fixture.nativeElement.querySelector('[data-testid="hero-kpi-YEARS"] .kn span');
+    expect(el).toBeTruthy();
+    expect(parseFloat(el.textContent ?? '0')).toBeGreaterThan(4);
+  });
 });

@@ -1,4 +1,4 @@
-<section id="hero">
+<section #heroSection id="hero">
   <div class="hero-grid"></div>
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
@@ -24,7 +24,7 @@
         <div class="kpi" [attr.data-testid]="'hero-kpi-' + kpi.id">
           <div class="kn">
             @if (kpi.id === 'YEARS') {
-              <span>3<em>+</em></span>
+              <span>{{ yearsCounter | number:'1.2-2' }}</span>
             } @else if (kpi.id === 'LANGUAGES') {
               <span>3</span>
             } @else if (kpi.id === 'INDUSTRIES') {
