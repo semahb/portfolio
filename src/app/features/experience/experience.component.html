@@ -16,9 +16,11 @@
         </div>
         <div class="trole">{{ (getExperienceKeyPrefix(i) + '_ROLE') | translate }}</div>
         <div class="tco">{{ (getExperienceKeyPrefix(i) + '_COMPANY') | translate }}</div>
-        <p class="tdesc">{{ (getExperienceKeyPrefix(i) + '_DESC') | translate }}</p>
+        @for (par of getDescParagraphs(i); track $index) {
+          <p class="tdesc" [innerHTML]="par"></p>
+        }
         <ul class="tbuls">
-          @for (bullet of [1, 2, 3]; track $index) {
+          @for (bullet of getBulletIndexes(item.bullets.length); track $index) {
             <li>{{ (getExperienceKeyPrefix(i) + '_BULLET' + bullet) | translate }}</li>
           }
         </ul>

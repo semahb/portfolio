@@ -1,6 +1,6 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { EXPERIENCE_ITEMS } from '../../core/data/portfolio.data';
 
 @Component({
@@ -13,6 +13,7 @@ import { EXPERIENCE_ITEMS } from '../../core/data/portfolio.data';
 })
 export class ExperienceComponent {
   experienceItems = EXPERIENCE_ITEMS;
+  private readonly translate = inject(TranslateService);
 
   getExperienceKeyPrefix(index: number): string {
     return `EXPERIENCE.EXP${index + 1}`;
@@ -20,5 +21,15 @@ export class ExperienceComponent {
 
   getWorkTypeKey(workType: string): string {
     return `EXPERIENCE.WORKTYPE_${workType.toUpperCase()}`;
+  }
+
+  getBulletIndexes(length: number): number[] {
+    return Array.from({ length }, (_, i) => i + 1);
+  }
+
+  getDescParagraphs(index: number): string[] {
+    const key = `${this.getExperienceKeyPrefix(index)}_DESC`;
+    const desc = this.translate.instant(key);
+    return desc.split('\n\n').map((p: string) => p.replace(/\n/g, '<br>'));
   }
 }
