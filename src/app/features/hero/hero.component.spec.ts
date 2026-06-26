@@ -29,13 +29,13 @@ describe('HeroComponent', () => {
     expect(badge).toBeTruthy();
   });
 
-  it('should set elapsedTime matching YYYY-MM-DD HH:mm:ss format', () => {
-    expect(component.elapsedTime).toMatch(/^\d{2}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/);
+  it('should set elapsedTime matching yy.mm format', () => {
+    expect(component.elapsedTime).toMatch(/^\d{2}\.\d{2}$/);
   });
 
-  it('should render elapsedTime in the template in the correct format', () => {
+  it('should render elapsedTime in the template in yy.mm format', () => {
     const el: HTMLElement = fixture.nativeElement.querySelector('[data-testid="hero-kpi-YEARS"] .kn span');
     expect(el).toBeTruthy();
-    expect(el.textContent).toMatch(/^\d{2}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/);
+    expect(el.textContent).toMatch(/^\d{2}\.\d{2}$/);
   });
 });
