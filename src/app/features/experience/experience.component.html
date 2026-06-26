@@ -2,8 +2,8 @@
   <div class="slabel">{{ 'EXPERIENCE.TITLE' | translate }}</div>
   <h2 class="stitle">{{ 'EXPERIENCE.SUBTITLE' | translate }}</h2>
   <div class="tl">
-    @for (item of experienceItems; let i = $index; track item.role) {
-      <div class="tli r" [attr.data-testid]="'experience-' + item.role">
+    @for (item of experienceItems; let i = $index; track $index) {
+      <div class="tli r" [attr.data-testid]="'experience-' + i">
         <div class="tdot" [class.live]="item.isLive"></div>
         <div class="tperiod">
           {{ (getExperienceKeyPrefix(i) + '_PERIOD') | translate }}
@@ -16,12 +16,12 @@
         </div>
         <div class="trole">{{ (getExperienceKeyPrefix(i) + '_ROLE') | translate }}</div>
         <div class="tco">{{ (getExperienceKeyPrefix(i) + '_COMPANY') | translate }}</div>
-        @for (par of getDescParagraphs(i); track $index) {
-          <p class="tdesc" [innerHTML]="par"></p>
+        @for (par of allDescParagraphs()[i]; track $index) {
+          <p class="tdesc" [innerHTML]="par" [attr.data-testid]="'experience-' + i + '-desc-par-' + $index"></p>
         }
         <ul class="tbuls">
           @for (bullet of getBulletIndexes(item.bullets.length); track $index) {
-            <li>{{ (getExperienceKeyPrefix(i) + '_BULLET' + bullet) | translate }}</li>
+            <li [attr.data-testid]="'experience-' + i + '-bullet-' + bullet">{{ (getExperienceKeyPrefix(i) + '_BULLET' + bullet) | translate }}</li>
           }
         </ul>
         <div class="ttechs">
