@@ -9,7 +9,7 @@ services:
     labels:
       - traefik.enable=true
       - traefik.docker.network=web-proxy
-      - traefik.http.routers.portfolio.rule=Host(`semah-bader.com`) && !PathPrefix(`/assets`)
+      - traefik.http.routers.portfolio.rule=Host(`semah-bader.com`)
       - traefik.http.routers.portfolio.entrypoints=websecure
       - traefik.http.routers.portfolio.tls=true
       - traefik.http.routers.portfolio.tls.certresolver=le
