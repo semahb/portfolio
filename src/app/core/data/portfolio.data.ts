@@ -359,15 +359,22 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
   {
     period: 'Jan 2023 — Sep 2023',
     badge: '',
-    role: 'Full-Stack Java Developer',
+    role: 'Full Stack Web Developer',
     company: 'DNDServ — Tunisia 🇹🇳',
-    description: 'Built a multi-module international mobility platform with real-time communication and intelligent search.',
+    description: 'Contributed to the development of ESP-Mob, an international mobility platform that digitalizes and centralizes the entire mobility lifecycle for universities, students, and partner institutions. The platform streamlines the full process — from university partnerships and mobility opportunities to candidate applications, evaluations, interviews, and online payments — within a unified ecosystem.\n\nBeyond my technical role, I actively participated in product evolution by proposing features and improving business workflows based on real user and institutional needs, helping shape the platform into a complete end-to-end solution for international mobility management.\n\nKey Contributions\nHelped design and develop a platform that centralizes the entire international mobility process for universities and partner organizations.\nContributed to product evolution by proposing business features and workflow improvements in collaboration with stakeholders.\nBuilt and maintained modules for university partnerships, enabling institutions to manage international collaboration programs.\nDeveloped features for publishing and managing mobility opportunities for students and candidates.\nImplemented the full candidate application lifecycle, including submission, document handling, and processing workflows.\nDeveloped evaluation and selection systems used to assess and rank candidates.\nIntegrated real-time video interview capabilities to support remote candidate assessments.\nImplemented online payment workflows to support administrative and program-related transactions.\nEnsured secure access control using Keycloak (SSO, RBAC, authentication and authorization).\nContributed to building a scalable and maintainable architecture following modern software engineering practices.',
     bullets: [
-      { text: 'Real-time video calling and WebSocket instant messaging' },
-      { text: 'AI-powered message autocomplete for better UX' },
-      { text: 'ElasticSearch full-text search across the platform' }
+      { text: 'Helped design and develop a platform that centralizes the entire international mobility process for universities and partner organizations.' },
+      { text: 'Contributed to product evolution by proposing business features and workflow improvements in collaboration with stakeholders.' },
+      { text: 'Built and maintained modules for university partnerships, enabling institutions to manage international collaboration programs.' },
+      { text: 'Developed features for publishing and managing mobility opportunities for students and candidates.' },
+      { text: 'Implemented the full candidate application lifecycle, including submission, document handling, and processing workflows.' },
+      { text: 'Developed evaluation and selection systems used to assess and rank candidates.' },
+      { text: 'Integrated real-time video interview capabilities to support remote candidate assessments.' },
+      { text: 'Implemented online payment workflows to support administrative and program-related transactions.' },
+      { text: 'Ensured secure access control using Keycloak (SSO, RBAC, authentication and authorization).' },
+      { text: 'Contributed to building a scalable and maintainable architecture following modern software engineering practices.' }
     ],
-    techs: ['Spring Boot', 'WebSockets', 'Angular', 'ElasticSearch', 'MySQL'    ],
+    techs: ['Java', 'Spring Boot', 'Angular', 'PostgreSQL', 'Keycloak', 'Liquibase', 'REST APIs', 'Docker', 'Git', 'Maven', 'JWT', 'OAuth 2.0', 'OpenID Connect (OIDC)', 'CI/CD', 'Agile/Scrum'],
     workType: 'remote',
     isLive: false
   },
