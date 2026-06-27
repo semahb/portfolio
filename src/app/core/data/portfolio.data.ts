@@ -381,15 +381,20 @@ export const EXPERIENCE_ITEMS: ExperienceItem[] = [
   {
     period: 'May 2022 — Nov 2022',
     badge: '',
-    role: 'Full-Stack Developer — Freelance',
-    company: 'Healthcare Sector',
-    description: 'Solo delivery of a complete telemedicine platform in 6 months.',
+    role: 'Full Stack Web Developer',
+    company: 'Healthcare Sector — Tunisia 🇹🇳',
+    description: 'Contributed to the development of TEL-MED, a digital healthcare platform designed to transform and democratize access to medical services in Tunisia. The platform enables patients — especially in rural and underserved regions — to access remote medical consultations, reducing the need for physical travel and improving access to specialists.\n\nBeyond technical development, I contributed to shaping the product vision by proposing features aimed at improving healthcare accessibility, communication between doctors and patients, and overall system usability.\n\nKey Contributions\nContributed to the development of a platform that digitizes healthcare services in Tunisia, improving access to medical care for patients in rural and underserved areas.\nDeveloped and managed doctor account systems, enabling structured onboarding and administration of healthcare professionals.\nBuilt a secure internal chat system to facilitate communication between patients and doctors.\nImplemented remote appointment booking workflows, allowing patients to consult doctors from anywhere.\nSupported remote consultation capabilities, enabling patients to access specialists without physical travel.\nDeveloped digital prescription features, allowing doctors to issue prescriptions electronically after consultations.\nContributed to product thinking by proposing features focused on improving healthcare accessibility and operational efficiency.\nEnsured secure handling of sensitive medical data with proper authentication and role-based access control.',
     bullets: [
-      { text: 'Patient records, radiology reports, appointment scheduling' },
-      { text: 'Electronic prescriptions with QR Code digital signature' },
-      { text: 'JWT + Spring Security authentication system' }
+      { text: 'Contributed to the development of a platform that digitizes healthcare services in Tunisia, improving access to medical care for patients in rural and underserved areas.' },
+      { text: 'Developed and managed doctor account systems, enabling structured onboarding and administration of healthcare professionals.' },
+      { text: 'Built a secure internal chat system to facilitate communication between patients and doctors.' },
+      { text: 'Implemented remote appointment booking workflows, allowing patients to consult doctors from anywhere.' },
+      { text: 'Supported remote consultation capabilities, enabling patients to access specialists without physical travel.' },
+      { text: 'Developed digital prescription features, allowing doctors to issue prescriptions electronically after consultations.' },
+      { text: 'Contributed to product thinking by proposing features focused on improving healthcare accessibility and operational efficiency.' },
+      { text: 'Ensured secure handling of sensitive medical data with proper authentication and role-based access control.' }
     ],
-    techs: ['Spring Boot', 'Spring Security', 'JWT', 'Angular', 'MySQL'    ],
+    techs: ['Java', 'Spring Boot', 'Angular', 'PostgreSQL', 'REST APIs', 'Docker', 'Git', 'Maven', 'JWT', 'OAuth 2.0', 'OpenID Connect (OIDC)', 'Agile/Scrum'],
     workType: 'remote',
     isLive: false
   }
