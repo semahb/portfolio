@@ -1,4 +1,4 @@
-# ---- Build stage ----
+# ---- Build Angular ----
 FROM node:20-alpine AS build
 WORKDIR /app
 
@@ -8,13 +8,21 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-# ---- Serve stage ----
-FROM nginx:alpine
+# ---- Build Server ----
+FROM node:20-alpine AS server-build
+WORKDIR /app
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY server/package*.json ./server/
+RUN npm ci --prefix server
 
-# Angular 17+ (esbuild builder) outputs to dist/<project-name>/browser
-# If your Angular project name isn't "portfolio", change the path below to match.
-COPY --from=build /app/dist/portfolio /usr/share/nginx/html
+# ---- Run ----
+FROM node:20-alpine
+WORKDIR /app
+
+COPY --from=build /app/dist ./dist
+COPY --from=server-build /app/server/node_modules ./server/node_modules
+COPY server/index.js ./server/
 
 EXPOSE 2000
+
+CMD ["node", "server/index.js"]
