@@ -17,6 +17,12 @@ export class ExperienceComponent {
   experienceItems = EXPERIENCE_ITEMS;
   private readonly translate = inject(TranslateService);
 
+  expandedStates: boolean[] = EXPERIENCE_ITEMS.map(() => false);
+
+  toggleExpand(index: number): void {
+    this.expandedStates[index] = !this.expandedStates[index];
+  }
+
   readonly allDescParagraphs = toSignal(
     combineLatest(
       EXPERIENCE_ITEMS.map((_, i) =>
@@ -39,6 +45,11 @@ export class ExperienceComponent {
 
   getWorkTypeKey(workType: string): string {
     return `EXPERIENCE.WORKTYPE_${workType.toUpperCase()}`;
+  }
+
+  getDescParagraphs(index: number): string[] {
+    const paragraphs = this.allDescParagraphs();
+    return paragraphs && paragraphs.length > index ? paragraphs[index] : [];
   }
 
   getBulletIndexes(length: number): number[] {

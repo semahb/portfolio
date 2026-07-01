@@ -1,0 +1,37 @@
+.brand-link {
+  color: var(--indigo);
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.cta-expand {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--indigo);
+  background: var(--indigo-dim);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.18s;
+  margin-bottom: 0.9rem;
+
+  &:hover {
+    background: var(--indigo);
+    color: #fff;
+  }
+}
+
+.tdesc-wrapper {
+  overflow: hidden;
+  transition: max-height 0.35s var(--ease);
+  max-height: 1000px;
+
+  &:not(.expanded) {
+    max-height: 400px;
+  }
+}
