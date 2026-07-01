@@ -16,8 +16,21 @@
         </div>
         <div class="trole">{{ (getExperienceKeyPrefix(i) + '_ROLE') | translate }}</div>
         <div class="tco">{{ (getExperienceKeyPrefix(i) + '_COMPANY') | translate }}</div>
-        @for (par of allDescParagraphs()[i]; track $index) {
-          <p class="tdesc" [innerHTML]="par" [attr.data-testid]="'experience-' + i + '-desc-par-' + $index"></p>
+        <div class="tdesc-wrapper" [class.expanded]="expandedStates[i]">
+          @if (expandedStates[i]) {
+            @for (par of getDescParagraphs(i); track $index) {
+              <p class="tdesc" [innerHTML]="par" [attr.data-testid]="'experience-' + i + '-desc-par-' + $index"></p>
+            }
+          } @else {
+            @if (getDescParagraphs(i).length > 0) {
+              <p class="tdesc" [innerHTML]="getDescParagraphs(i)[0]" [attr.data-testid]="'experience-' + i + '-desc-par-0'"></p>
+            }
+          }
+        </div>
+        @if (getDescParagraphs(i).length > 1) {
+          <button class="cta-expand" (click)="toggleExpand(i)" [attr.data-testid]="'experience-' + i + '-cta-expand'">
+            {{ (expandedStates[i] ? 'EXPERIENCE.CTA_COLLAPSE' : 'EXPERIENCE.CTA_EXPAND') | translate }}
+          </button>
         }
         <ul class="tbuls">
           @for (bullet of getBulletIndexes(item.bullets.length); track $index) {

@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
+import { By } from '@angular/platform-browser';
 import { ExperienceComponent } from './experience.component';
 import { TranslateService } from '@ngx-translate/core';
 import { EXPERIENCE_ITEMS } from '../../core/data/portfolio.data';
@@ -161,6 +162,95 @@ describe('ExperienceComponent', () => {
     it('should have data-testid on bullet <li> elements for EXP1', () => {
       const bullets = fixture.nativeElement.querySelectorAll('[data-testid^="experience-0-bullet-"]');
       expect(bullets.length).toBe(EXPERIENCE_ITEMS[0].bullets.length);
+    });
+  });
+
+  describe('expand/collapse', () => {
+    beforeEach(() => {
+      TestBed.resetTestingModule();
+      const svc = createMockTranslateService();
+      // Return multi-paragraph descriptions so CTA renders
+      svc.stream.and.callFake((key: string) => {
+        if (key.startsWith('EXPERIENCE.EXP')) {
+          return of('First paragraph.\n\nSecond paragraph.\n\nThird paragraph.');
+        }
+        return of('');
+      });
+      TestBed.configureTestingModule({
+        imports: [ExperienceComponent],
+        providers: [{ provide: TranslateService, useValue: svc }]
+      }).compileComponents();
+      fixture = TestBed.createComponent(ExperienceComponent);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    });
+
+    it('should render a CTA expand button for each experience item', () => {
+      const ctas = fixture.nativeElement.querySelectorAll('[data-testid$="cta-expand"]');
+      expect(ctas.length).toBe(EXPERIENCE_ITEMS.length);
+    });
+
+    it('should show only the first paragraph when collapsed', () => {
+      const pars = fixture.nativeElement.querySelectorAll('[data-testid="experience-0-desc-par-0"]');
+      expect(pars.length).toBe(1);
+      const morePars = fixture.nativeElement.querySelectorAll('[data-testid="experience-0-desc-par-1"]');
+      expect(morePars.length).toBe(0);
+    });
+
+    it('should show all paragraphs when expanded after click', () => {
+      const cta = fixture.debugElement.query(By.css('[data-testid="experience-0-cta-expand"]'));
+      expect(cta).toBeTruthy();
+      cta.nativeElement.click();
+      fixture.detectChanges();
+
+      const pars = fixture.nativeElement.querySelectorAll('[data-testid^="experience-0-desc-par-"]');
+      expect(pars.length).toBe(3);
+    });
+
+    it('should toggle back to collapsed on second click', () => {
+      const cta = fixture.debugElement.query(By.css('[data-testid="experience-0-cta-expand"]'));
+      cta.nativeElement.click();
+      fixture.detectChanges();
+      let pars = fixture.nativeElement.querySelectorAll('[data-testid^="experience-0-desc-par-"]');
+      expect(pars.length).toBe(3);
+
+      cta.nativeElement.click();
+      fixture.detectChanges();
+      pars = fixture.nativeElement.querySelectorAll('[data-testid^="experience-0-desc-par-"]');
+      expect(pars.length).toBe(1);
+    });
+
+    it('should have independent expand states per experience', () => {
+      const cta0 = fixture.debugElement.query(By.css('[data-testid="experience-0-cta-expand"]'));
+      cta0.nativeElement.click();
+      fixture.detectChanges();
+
+      const pars0 = fixture.nativeElement.querySelectorAll('[data-testid^="experience-0-desc-par-"]');
+      expect(pars0.length).toBe(3);
+
+      const pars1 = fixture.nativeElement.querySelectorAll('[data-testid^="experience-1-desc-par-"]');
+      expect(pars1.length).toBe(1);
+    });
+
+    it('should not render CTA for entries with single-paragraph descriptions', () => {
+      TestBed.resetTestingModule();
+      const svc = createMockTranslateService();
+      svc.stream.and.callFake((key: string) => {
+        if (key.startsWith('EXPERIENCE.EXP')) {
+          return of('Single paragraph.');
+        }
+        return of('');
+      });
+      TestBed.configureTestingModule({
+        imports: [ExperienceComponent],
+        providers: [{ provide: TranslateService, useValue: svc }]
+      }).compileComponents();
+      fixture = TestBed.createComponent(ExperienceComponent);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+
+      const ctas = fixture.nativeElement.querySelectorAll('[data-testid$="cta-expand"]');
+      expect(ctas.length).toBe(0);
     });
   });
 });
